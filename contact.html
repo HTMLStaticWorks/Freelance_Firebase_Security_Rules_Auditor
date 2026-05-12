@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Firebase Security Auditor</title>
+    <meta name="description" content="Get in touch to secure your Firebase architecture. Book a free 15-minute consultation.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0f',
+                            surface: '#12121a'
+                        },
+                        neon: {
+                            blue: '#00f0ff',
+                            cyan: '#0ff',
+                            emerald: '#00ff66',
+                            purple: '#b026ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-neon-emerald selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
+                        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
+                        <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
+                        
+                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                            <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fa-solid fa-sun text-yellow-400"></i>
+                            </button>
+                            <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Login</a>
+                            <a href="contact.html" class="active bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30 hover:bg-neon-emerald hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,255,102,0.2)]">Book Audit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 1</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="services.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="pricing.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="login.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                <a href="contact.html" class="text-neon-emerald block px-3 py-2 rounded-md text-base font-medium mt-4 border border-neon-emerald/30 text-center">Book Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Contact Hero -->
+    <section class="pt-32 pb-16 lg:pt-48 lg:pb-24 relative overflow-hidden">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-neon-emerald/20 blur-[150px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal active">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Secure Your <span class="text-gradient-emerald">Architecture</span></h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                Whether you need a full audit, a rule rewrite, or just a quick architecture review, I'm here to ensure your Firebase data is impenetrable.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 2 & 3: Form and Map/Details -->
+    <section class="py-12 pb-24 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- SECTION 2: Interactive Contact Form -->
+                <div class="reveal">
+                    <div class="glass-card rounded-2xl p-8 border-neon-emerald/20 relative">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-neon-emerald/10 blur-[30px] rounded-bl-full pointer-events-none"></div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Send an Encrypted Message</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                                    <input type="text" class="w-full bg-[#0c0c14] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-neon-emerald focus:ring-1 focus:ring-neon-emerald transition-all" placeholder="Jane Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                    <input type="email" class="w-full bg-[#0c0c14] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-neon-emerald focus:ring-1 focus:ring-neon-emerald transition-all" placeholder="jane@startup.io">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Firebase Setup Size</label>
+                                <select class="w-full bg-[#0c0c14] border border-white/10 rounded-md px-4 py-3 text-sm text-gray-300 focus:outline-none focus:border-neon-emerald transition-all appearance-none">
+                                    <option>Small (1-5 Collections)</option>
+                                    <option>Medium (6-15 Collections)</option>
+                                    <option>Enterprise (15+ Collections)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Service Required</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="service" class="form-radio h-4 w-4 text-neon-emerald border-white/20 bg-dark-bg focus:ring-neon-emerald focus:ring-offset-dark-bg">
+                                        <span class="text-sm text-gray-300">Basic Audit</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="service" class="form-radio h-4 w-4 text-neon-emerald border-white/20 bg-dark-bg focus:ring-neon-emerald focus:ring-offset-dark-bg" checked>
+                                        <span class="text-sm text-white font-semibold">Full Remediation</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="service" class="form-radio h-4 w-4 text-neon-emerald border-white/20 bg-dark-bg focus:ring-neon-emerald focus:ring-offset-dark-bg">
+                                        <span class="text-sm text-gray-300">Architecture Review</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="service" class="form-radio h-4 w-4 text-neon-emerald border-white/20 bg-dark-bg focus:ring-neon-emerald focus:ring-offset-dark-bg">
+                                        <span class="text-sm text-gray-300">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Project Details</label>
+                                <textarea rows="4" class="w-full bg-[#0c0c14] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-neon-emerald focus:ring-1 focus:ring-neon-emerald transition-all resize-none" placeholder="Briefly describe your app and your main security concerns..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-neon-emerald text-black font-bold py-4 rounded-md hover:bg-white transition-all shadow-[0_0_20px_rgba(0,255,102,0.3)] flex justify-center items-center">
+                                Initialize Handshake <i class="fa-solid fa-lock ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: Details & Map -->
+                <div class="reveal lg:pl-8">
+                    <h3 class="text-2xl font-bold text-white mb-8">Direct Contact</h3>
+                    
+                    <div class="space-y-8 mb-12">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                                <i class="fa-solid fa-envelope text-neon-emerald"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Email</h4>
+                                <p class="text-gray-400 text-sm mb-1">For general inquiries and NDAs.</p>
+                                <a href="mailto:alex@fireaudit.io" class="text-neon-emerald text-sm font-code hover:underline">alex@fireaudit.io</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                                <i class="fa-brands fa-slack text-neon-emerald"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Slack Connect</h4>
+                                <p class="text-gray-400 text-sm mb-1">Available for enterprise retainer clients.</p>
+                                <span class="text-gray-500 text-sm font-code">Invite via email</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                                <i class="fa-solid fa-globe text-neon-emerald"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Remote Global</h4>
+                                <p class="text-gray-400 text-sm">Working with startups worldwide. Core hours: 9AM - 6PM EST.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cyber Map Abstract Graphic -->
+                    <div class="glass-card rounded-xl p-2 h-48 border-white/5 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-[#0c0c14] flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
+                            <div class="w-full h-full relative overflow-hidden" style="background-image: radial-gradient(circle at center, rgba(0,255,102,0.1) 0, transparent 70%);">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-neon-emerald/20 rounded-full animate-[ping_3s_linear_infinite]"></div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-neon-emerald/40 rounded-full animate-[ping_2s_linear_infinite]"></div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-neon-emerald rounded-full"></div>
+                                
+                                <!-- Fake coordinates -->
+                                <div class="absolute bottom-2 right-4 font-code text-[10px] text-neon-emerald/50">LAT: 40.7128<br>LNG: -74.0060</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Consultation Booking CTA -->
+    <section class="py-24 bg-[#08080c]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <i class="fa-regular fa-calendar-check text-5xl text-gray-500 mb-6"></i>
+            <h2 class="text-3xl font-bold text-white mb-4">Prefer to talk face-to-face?</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                Skip the form and jump straight onto a quick video call. We'll discuss your app's architecture, your security concerns, and determine the best approach.
+            </p>
+            <button class="glass px-8 py-4 rounded-md font-bold text-white hover:bg-white/10 border border-white/20 transition-all flex items-center justify-center mx-auto">
+                <i class="fa-solid fa-video mr-3"></i> Schedule 15-Min Strategy Call
+            </button>
+            <p class="text-xs text-gray-600 mt-4">100% Free. No pressure. Powered by Calendly.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-sm mb-6">
+                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-500 hover:text-white transition-colors text-sm">Home</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Services</a></li>
+                        <li><a href="pricing.html" class="text-gray-500 hover:text-white transition-colors text-sm">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

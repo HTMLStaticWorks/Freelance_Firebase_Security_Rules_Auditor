@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | FireAudit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#0a0a0f', surface: '#12121a' },
+                        neon: { blue: '#00f0ff', emerald: '#00ff66', purple: '#b026ff' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+    <!-- Pulsing security scanning background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-neon-emerald/5 rounded-full animate-[ping_4s_linear_infinite]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-neon-emerald/10 rounded-full animate-[ping_3s_linear_infinite]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-neon-emerald/20 rounded-full animate-[ping_2s_linear_infinite]"></div>
+    </div>
+
+    <div class="max-w-3xl w-full text-center relative z-10 reveal active">
+        <div class="mb-12">
+            <i class="fa-solid fa-user-shield text-7xl text-neon-emerald mb-6 animate-float"></i>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Securing the <span class="text-gradient-emerald">Future</span></h1>
+            <p class="text-xl text-gray-400 max-w-xl mx-auto">
+                The next-generation Firebase security auditing platform is under development. Prepare for absolute data integrity.
+            </p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-2xl mx-auto">
+            <div class="glass-card p-6 rounded-xl border-white/5">
+                <div class="text-4xl font-bold text-white mb-1" id="days">14</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Days</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-white/5">
+                <div class="text-4xl font-bold text-white mb-1" id="hours">23</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Hours</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-white/5">
+                <div class="text-4xl font-bold text-white mb-1" id="minutes">59</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Minutes</div>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-white/5">
+                <div class="text-4xl font-bold text-neon-emerald mb-1" id="seconds">42</div>
+                <div class="text-xs text-gray-500 uppercase tracking-widest">Seconds</div>
+            </div>
+        </div>
+
+        <!-- Subscription Field -->
+        <div class="max-w-md mx-auto">
+            <p class="text-sm text-gray-500 mb-6 font-code">STATUS: [INITIALIZING_FIREWALL...]</p>
+            <form class="flex flex-col sm:flex-row gap-3">
+                <input type="email" required class="flex-1 bg-white/5 border border-white/10 rounded-md px-4 py-4 text-white focus:outline-none focus:border-neon-emerald transition-all" placeholder="Enter email for early access">
+                <button type="submit" class="bg-neon-emerald text-black font-bold px-8 py-4 rounded-md hover:bg-white transition-all shadow-[0_0_20px_rgba(0,255,102,0.3)]">
+                    Join Waitlist
+                </button>
+            </form>
+            <p class="text-[10px] text-gray-600 mt-4 uppercase tracking-tighter">Your email is protected by military-grade encryption.</p>
+        </div>
+
+        <div class="mt-20 flex justify-center space-x-8 text-gray-500">
+            <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-twitter text-2xl"></i></a>
+            <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
+            <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple countdown simulation
+        let s = 42;
+        setInterval(() => {
+            s--;
+            if(s < 0) s = 59;
+            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>

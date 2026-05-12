@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Firebase Security Auditor</title>
+    <meta name="description" content="Explore my comprehensive Firebase security auditing and remediation services.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0f',
+                            surface: '#12121a'
+                        },
+                        neon: {
+                            blue: '#00f0ff',
+                            cyan: '#0ff',
+                            emerald: '#00ff66',
+                            purple: '#b026ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-neon-blue selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
+                        <a href="index-2.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 2</a>
+                        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
+                        <a href="services.html" class="nav-link active hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
+                        
+                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                            <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fa-solid fa-sun text-yellow-400"></i>
+                            </button>
+                            <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Login</a>
+                            <a href="contact.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Book Audit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 1</a>
+                <a href="index-2.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 2</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="services.html" class="text-neon-blue block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="pricing.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="login.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                <a href="contact.html" class="text-neon-blue block px-3 py-2 rounded-md text-base font-medium mt-4 border border-neon-blue/30 text-center">Book Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Services Hero Banner -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="reveal active">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Expert <span class="text-gradient">Security Services</span></h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                    Comprehensive vulnerability assessments, custom rule implementation, and ongoing architecture reviews specifically tailored for the Firebase ecosystem.
+                </p>
+                <a href="#services-grid" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 glass hover:bg-white/5 transition-all text-gray-400 animate-bounce">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Security Services Grid -->
+    <section id="services-grid" class="py-24 border-t border-white/5 bg-[#08080c]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal group">
+                    <div class="w-14 h-14 rounded-xl bg-neon-blue/10 flex items-center justify-center mb-6 border border-neon-blue/20">
+                        <i class="fa-solid fa-magnifying-glass-chart text-neon-blue text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon-blue transition-colors">Vulnerability Audit</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">A deep, manual and automated review of your current Firestore and Realtime Database rulesets to identify open endpoints and logical flaws.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Automated Scans</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Exploit Simulation</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> PDF Reporting</li>
+                    </ul>
+                    <a href="service-details.html" class="inline-block border border-neon-blue/30 text-neon-blue hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold w-full text-center">View Details</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-xl bg-neon-emerald/10 flex items-center justify-center mb-6 border border-neon-emerald/20">
+                        <i class="fa-solid fa-code text-neon-emerald text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon-emerald transition-colors">Custom Rule Writing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Complete rewrite or initial implementation of secure, optimized, and strictly validated security rules tailored to your exact application logic.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> RBAC Implementation</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Data Validation</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Performance Tuning</li>
+                    </ul>
+                    <a href="service-details.html" class="inline-block bg-neon-emerald/10 border border-neon-emerald/30 text-neon-emerald hover:bg-neon-emerald hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold w-full text-center">View Details</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-xl bg-neon-purple/10 flex items-center justify-center mb-6 border border-neon-purple/20">
+                        <i class="fa-solid fa-network-wired text-neon-purple text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon-purple transition-colors">Architecture Consulting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Strategic advice on how to structure your NoSQL data to allow for granular security rules without requiring excessive database reads.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Schema Design</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Cost Optimization</li>
+                        <li class="text-xs text-gray-500 flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Scalability Review</li>
+                    </ul>
+                    <a href="service-details.html" class="inline-block border border-neon-purple/30 text-neon-purple hover:bg-neon-purple hover:text-white transition-all px-4 py-2 rounded-md text-sm font-semibold w-full text-center">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Process/Workflow Explanation -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">How It <span class="text-neon-emerald">Works</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">A transparent, step-by-step methodology ensuring zero disruption to your active users.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                <!-- Connectors for Desktop -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-dark-bg via-neon-emerald/30 to-dark-bg -translate-y-1/2 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="glass-card p-6 rounded-xl text-center reveal relative z-10 border-white/5">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg border-2 border-neon-emerald flex items-center justify-center mx-auto mb-4 font-bold text-neon-emerald">1</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Discovery</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">Reviewing your app's functionality, data schema, and current ruleset in a staging environment.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-6 rounded-xl text-center reveal relative z-10 border-white/5" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg border-2 border-neon-emerald flex items-center justify-center mx-auto mb-4 font-bold text-neon-emerald">2</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Simulation</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">Running automated penetration tests locally using the Firebase Emulator Suite to map vulnerabilities.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-6 rounded-xl text-center reveal relative z-10 border-white/5" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg border-2 border-neon-emerald flex items-center justify-center mx-auto mb-4 font-bold text-neon-emerald">3</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Development</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">Drafting the new ruleset offline, creating robust custom validation functions, and testing extensively.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card p-6 rounded-xl text-center reveal relative z-10 border-white/5" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg border-2 border-neon-emerald flex items-center justify-center mx-auto mb-4 font-bold text-neon-emerald">4</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Deployment</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">Providing the exact code to paste into your console or CI/CD pipeline, alongside a full mitigation report.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQ Accordion -->
+    <section class="py-24 bg-dark-surface border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold mb-4">Frequently Asked <span class="text-gradient">Questions</span></h2>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-lg border-white/5 overflow-hidden faq-item">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Do you need access to our production database?
+                        <i class="fa-solid fa-chevron-down text-neon-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-sm text-gray-400 hidden faq-content">
+                        No. I only need a copy of your current `firestore.rules` file and an explanation or JSON representation of your data schema (e.g., sample documents with dummy data). I run all simulations locally using the Firebase Emulator.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-lg border-white/5 overflow-hidden faq-item">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Will deploying new rules break my app?
+                        <i class="fa-solid fa-chevron-down text-neon-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-sm text-gray-400 hidden faq-content">
+                        If your app is currently relying on insecure paths, securing them might block existing queries. This is why the 'Discovery' phase is critical. I map your exact frontend queries and ensure the rules allow legitimate traffic while blocking malicious access. I recommend deploying to a staging environment first.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-lg border-white/5 overflow-hidden faq-item">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        How long does an audit usually take?
+                        <i class="fa-solid fa-chevron-down text-neon-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-sm text-gray-400 hidden faq-content">
+                        A typical vulnerability scan and report takes 2-3 business days. A full rule rewrite depending on complexity (like intricate RBAC systems) usually takes 1-2 weeks.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-lg border-white/5 overflow-hidden faq-item">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Do you audit Firebase Authentication or Cloud Functions?
+                        <i class="fa-solid fa-chevron-down text-neon-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-sm text-gray-400 hidden faq-content">
+                        My primary expertise is Firestore, Realtime Database, and Cloud Storage security rules. However, I often review how your Cloud Functions interact with your database (e.g., bypassing rules using the Admin SDK) as part of the Architecture Consulting service.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="contact.html" class="inline-block bg-neon-blue text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold shadow-[0_0_20px_rgba(0,240,255,0.4)]">
+                    Still have questions? Let's talk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-sm mb-6">
+                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Security Audits</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Custom Rulesets</a></li>
+                        <li><a href="pricing.html" class="text-gray-500 hover:text-white transition-colors text-sm">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm">About</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                button.classList.add('text-neon-blue');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                button.classList.remove('text-neon-blue');
+            }
+        }
+    </script>
+</body>
+</html>

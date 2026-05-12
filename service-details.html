@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | Firebase Security Auditor</title>
+    <meta name="description" content="In-depth look at our Firebase Vulnerability Audit and Custom Ruleset implementation.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0f',
+                            surface: '#12121a'
+                        },
+                        neon: {
+                            blue: '#00f0ff',
+                            cyan: '#0ff',
+                            emerald: '#00ff66',
+                            purple: '#b026ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-neon-emerald selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
+                        <a href="index-2.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 2</a>
+                        <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
+                        <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
+                        
+                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                            <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fa-solid fa-sun text-yellow-400"></i>
+                            </button>
+                            <a href="contact.html" class="bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30 hover:bg-neon-emerald hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,255,102,0.2)]">Book Audit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 1</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="services.html" class="text-neon-emerald block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="pricing.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Detailed Service Overview -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-24 bg-dark-bg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <a href="services.html" class="text-gray-500 hover:text-neon-emerald text-sm mb-8 inline-block transition-colors"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Services</a>
+            
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 reveal active">
+                <div class="md:w-2/3">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-neon-emerald/30 bg-neon-emerald/5 text-neon-emerald text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-star"></i> Most Requested
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Full Remediation & Rewrite</h1>
+                    <p class="text-xl text-gray-400 leading-relaxed">The ultimate package: I audit your schema, find the holes, write the custom rules to fix them, and provide long-term implementation support.</p>
+                </div>
+                <div class="md:w-1/3 mt-8 md:mt-0 flex justify-start md:justify-end">
+                    <a href="contact.html" class="bg-neon-emerald text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(0,255,102,0.4)]">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 reveal border-t border-white/5 pt-16">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-microscope text-neon-blue mr-2"></i> What I Analyze</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>- Current <code>firestore.rules</code> file</li>
+                        <li>- Data model architecture</li>
+                        <li>- Read/Write logic mapping</li>
+                        <li>- Role-Based Access logic</li>
+                        <li>- Cloud Function bypasses</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-laptop-code text-neon-emerald mr-2"></i> What I Deliver</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>- Optimized ruleset file</li>
+                        <li>- Exploit proof-of-concepts</li>
+                        <li>- Custom validation functions</li>
+                        <li>- PDF Mitigation Report</li>
+                        <li>- Emulator test scripts</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-neon-emerald/20 bg-neon-emerald/5">
+                    <h3 class="text-lg font-bold text-white mb-2">Ideal For:</h3>
+                    <p class="text-sm text-gray-400 mb-4">Apps approaching launch, post-MVP scaling phases, or companies required to meet compliance standards (SOC2, HIPAA).</p>
+                    <div class="text-xs text-neon-emerald font-code">Timeline: 1-2 Weeks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Vulnerability Examples & Screenshots -->
+    <section class="py-24 bg-[#0d0d14] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold mb-4">What We <span class="text-red-400">Fix</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Real-world examples of critical vulnerabilities I regularly find and remediate in client databases.</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Example 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div>
+                        <div class="inline-block px-2 py-1 rounded bg-red-500/20 text-red-400 text-xs font-bold mb-4 border border-red-500/30">CRITICAL SEVERITY</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">The "Auth Only" Bypass</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Many developers use <code>request.auth != null</code> as a blanket rule. This means ANY logged-in user can read or overwrite ANY other user's data. I rewrite these into strict owner-only logic.
+                        </p>
+                    </div>
+                    <div class="glass-card rounded-xl p-6 font-code text-sm border-red-500/30 relative">
+                        <div class="absolute top-2 right-2 text-xs text-red-500 font-bold bg-red-500/10 px-2 py-1 rounded">VULNERABLE</div>
+                        <div class="text-gray-500">// Problem: Any authenticated user has full access</div>
+                        <div class="text-neon-blue">match</div> /users/{userId} {
+                        <div class="pl-4 text-red-400 line-through">allow read, write: if request.auth != null;</div>
+                        }
+                        
+                        <div class="text-neon-emerald mt-6">// Solution: Strictly enforce owner access</div>
+                        <div class="text-neon-blue">match</div> /users/{userId} {
+                        <div class="pl-4 text-neon-emerald">allow read, write: if request.auth.uid == userId;</div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Example 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
+                    <div class="order-2 lg:order-1 glass-card rounded-xl p-6 font-code text-sm border-yellow-500/30 relative">
+                        <div class="absolute top-2 right-2 text-xs text-yellow-500 font-bold bg-yellow-500/10 px-2 py-1 rounded">VULNERABLE</div>
+                        <div class="text-gray-500">// Problem: Missing schema validation on write</div>
+                        <div class="text-neon-blue">match</div> /products/{productId} {
+                        <div class="pl-4 text-yellow-400">allow write: if isAdmin();</div>
+                        }
+                        
+                        <div class="text-neon-emerald mt-6">// Solution: Enforce data types and required fields</div>
+                        <div class="text-neon-blue">match</div> /products/{productId} {
+                        <div class="pl-4 text-neon-emerald">allow write: if isAdmin() && <br>
+                            &nbsp;&nbsp;request.resource.data.price is number && <br>
+                            &nbsp;&nbsp;request.resource.data.price >= 0;</div>
+                        }
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="inline-block px-2 py-1 rounded bg-yellow-500/20 text-yellow-400 text-xs font-bold mb-4 border border-yellow-500/30">HIGH SEVERITY</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Schema Injection</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Without rule-level validation, malicious actors can insert incorrect data types (e.g., strings instead of numbers) that crash your frontend or corrupt the database. I enforce strict schema rules.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Pricing Table -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold mb-4">Service <span class="text-gradient">Pricing</span></h2>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden reveal border border-white/10">
+                <table class="w-full text-left text-sm text-gray-400">
+                    <thead class="text-xs text-gray-300 uppercase bg-white/5 border-b border-white/10">
+                        <tr>
+                            <th scope="col" class="px-6 py-4">Features</th>
+                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10">Basic Audit</th>
+                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/10 text-neon-emerald">Full Remediation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 font-medium text-white">Automated Vulnerability Scan</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/5"><i class="fa-solid fa-check text-neon-emerald"></i></td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 font-medium text-white">Manual Rule Review</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/5"><i class="fa-solid fa-check text-neon-emerald"></i></td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 font-medium text-white">PDF Mitigation Report</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/5"><i class="fa-solid fa-check text-neon-emerald"></i></td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 font-medium text-white">Custom Rule Writing (Rewrite)</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/5"><i class="fa-solid fa-check text-neon-emerald"></i></td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-4 font-medium text-white">Emulator Test Scripts</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-emerald/5"><i class="fa-solid fa-check text-neon-emerald"></i></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-6 py-6 font-medium text-white text-lg">Total Cost</td>
+                            <td class="px-6 py-6 text-center border-l border-white/10 text-xl font-bold text-white">$499</td>
+                            <td class="px-6 py-6 text-center border-l border-white/10 bg-neon-emerald/5 text-2xl font-bold text-neon-emerald">$1,299</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQs + CTA -->
+    <section class="py-24 bg-[#08080c] border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-2xl font-bold text-center mb-10">Service Specific FAQs</h2>
+            
+            <div class="space-y-4 mb-16">
+                <!-- FAQ -->
+                <div class="glass-card rounded-lg border-white/5 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        What happens if the rules break my frontend logic?
+                        <i class="fa-solid fa-chevron-down text-neon-emerald transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-sm text-gray-400 hidden">
+                        I write rules defensively. I provide you with Emulator test scripts so you can test your frontend queries locally against the new rules before ever touching production. I also offer 30-day post-launch support.
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-10 text-center border-neon-emerald/30 shadow-[0_0_30px_rgba(0,255,102,0.1)] relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-neon-emerald/5 to-transparent pointer-events-none"></div>
+                <h2 class="text-3xl font-bold text-white mb-4 relative z-10">Ready to secure your data?</h2>
+                <p class="text-gray-400 mb-8 relative z-10">Book the Full Remediation package today and sleep soundly knowing your architecture is locked down.</p>
+                <a href="contact.html" class="inline-block bg-neon-emerald text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold shadow-[0_0_20px_rgba(0,255,102,0.4)] relative z-10">
+                    Request Full Remediation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-sm mb-6">
+                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm">About</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                button.classList.add('text-neon-emerald');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                button.classList.remove('text-neon-emerald');
+            }
+        }
+    </script>
+</body>
+</html>

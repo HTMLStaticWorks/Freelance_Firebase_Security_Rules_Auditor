@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FireAudit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#0a0a0f', surface: '#12121a' },
+                        neon: { blue: '#00f0ff', emerald: '#00ff66', purple: '#b026ff' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-neon-blue/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neon-purple/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <div class="max-w-md w-full relative z-10 reveal active">
+        <div class="text-center mb-8">
+            <a href="index.html" class="inline-flex items-center mb-4">
+                <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2"></i>
+                <span class="font-bold text-2xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+            </a>
+            <h1 class="text-2xl font-bold text-white">Secure Portal Login</h1>
+            <p class="text-gray-400 mt-2">Access your security reports and rulesets.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border border-white/10 shadow-2xl">
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Work Email</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" id="email" required 
+                            class="w-full bg-[#0c0c14] border border-white/10 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neon-blue transition-all" 
+                            placeholder="name@company.com">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <label for="password" class="block text-sm font-medium text-gray-400">Password</label>
+                        <a href="#" class="text-xs text-neon-blue hover:underline">Forgot password?</a>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input type="password" id="password" required 
+                            class="w-full bg-[#0c0c14] border border-white/10 rounded-lg pl-11 pr-12 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-neon-blue transition-all" 
+                            placeholder="••••••••">
+                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-white transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" class="w-4 h-4 bg-dark-bg border-white/10 rounded text-neon-blue focus:ring-neon-blue focus:ring-offset-dark-bg">
+                    <label for="remember" class="ml-2 text-sm text-gray-400">Remember this device</label>
+                </div>
+
+                <button type="submit" class="w-full bg-neon-blue text-black font-bold py-3 rounded-lg hover:bg-white transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                    Authenticate <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-white/10"></div>
+                </div>
+                <div class="relative flex justify-center text-xs uppercase">
+                    <span class="bg-dark-surface px-4 text-gray-500">Or continue with</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button class="flex items-center justify-center space-x-2 bg-white/5 border border-white/10 py-2.5 rounded-lg text-sm text-gray-300 hover:bg-white/10 transition-all">
+                    <i class="fa-brands fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button class="flex items-center justify-center space-x-2 bg-white/5 border border-white/10 py-2.5 rounded-lg text-sm text-gray-300 hover:bg-white/10 transition-all">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </button>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-8">
+            Don't have an account? <a href="register.html" class="text-neon-emerald font-semibold hover:underline">Request Access</a>
+        </p>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.querySelector('i').classList.toggle('fa-eye');
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate login and redirect to dashboard
+            window.location.href = 'admin-dashboard.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anatomy of a Firestore Privilege Escalation Exploit | FireAudit</title>
+    <meta name="description" content="A technical breakdown of how poorly structured Role-Based Access Control in Firebase can allow malicious users to grant themselves administrative privileges.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0f',
+                            surface: '#12121a'
+                        },
+                        neon: {
+                            blue: '#00f0ff',
+                            cyan: '#0ff',
+                            emerald: '#00ff66',
+                            purple: '#b026ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-neon-purple selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
+                        <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="blog.html" class="nav-link active hover:text-white transition-colors px-3 py-2 text-sm font-medium">Blog</a>
+                        
+                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                            <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                                <i class="fa-solid fa-sun text-yellow-400"></i>
+                            </button>
+                            <a href="contact.html" class="bg-neon-purple/10 text-neon-purple border border-neon-purple/30 hover:bg-neon-purple hover:text-white transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(176,38,255,0.2)]">Book Audit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="blog.html" class="text-neon-purple block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Featured Article Banner -->
+    <header class="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#11111a] to-dark-bg z-0"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-neon-purple/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal active">
+            <div class="flex items-center justify-center space-x-2 mb-6">
+                <span class="bg-neon-purple/20 text-neon-purple border border-neon-purple/30 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Vulnerability Disclosure</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">The Anatomy of a Firestore Privilege Escalation Exploit</h1>
+            
+            <div class="flex items-center justify-center space-x-6 text-sm text-gray-400 mt-8">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-neon-purple text-white flex items-center justify-center font-bold mr-3">A</div>
+                    <span class="font-semibold text-gray-300">Alex (FireAudit)</span>
+                </div>
+                <span class="flex items-center"><i class="fa-regular fa-calendar mr-2"></i> May 12, 2026</span>
+                <span class="flex items-center"><i class="fa-regular fa-clock mr-2"></i> 8 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 border-t border-white/5 pt-12">
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <!-- SECTION 2: Full Article Content -->
+            <main class="lg:w-2/3 reveal">
+                <div class="prose prose-invert prose-lg max-w-none text-gray-300">
+                    <p class="lead text-xl text-gray-400 mb-8">
+                        Role-Based Access Control (RBAC) is the gold standard for managing permissions in complex applications. However, when implemented incorrectly in Firebase, it can leave the door wide open for malicious actors to grant themselves administrative privileges. Here's how it happens.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Vulnerable Setup</h2>
+                    <p>
+                        Imagine a standard SaaS application where user profiles are stored in a <code>/users</code> collection. The developer wants users to be able to edit their own profiles, so they write a rule like this:
+                    </p>
+
+                    <div class="glass-card rounded-xl p-6 font-code text-sm border-red-500/30 mb-8 overflow-x-auto">
+                        <div class="text-gray-500">// Vulnerable Rule</div>
+                        <div class="text-neon-blue">match</div> /users/{userId} {
+                        <div class="pl-4 text-gray-300">allow read, write: <span class="text-neon-purple">if</span> request.auth.uid == userId;</div>
+                        }
+                    </div>
+
+                    <p>
+                        At first glance, this looks secure. A user can only write to their own document. But what does the <code>/users/{userId}</code> document actually contain? Often, it contains a <code>role</code> field used by the frontend to determine what UI to show.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Exploit</h2>
+                    <p>
+                        Because the rule allows the user to write <em>anything</em> to their document, an attacker doesn't need to hack your servers. They simply open their browser console, instantiate the Firebase SDK, and run this code:
+                    </p>
+
+                    <div class="glass-card rounded-xl p-6 font-code text-sm border-white/10 mb-8 bg-[#1e1e2e] overflow-x-auto">
+                        <div class="text-gray-500">// The Attacker's Script</div>
+                        <span class="text-neon-purple">await</span> firestore.collection(<span class="text-yellow-300">'users'</span>).doc(myUid).update({
+                        <div class="pl-4">
+                            <span class="text-neon-blue">role</span>: <span class="text-yellow-300">'admin'</span>
+                        </div>
+                        });
+                    </div>
+
+                    <p>
+                        The Firebase Security Rules evaluate the request: <em>Is the user trying to write to their own document? Yes.</em> The rule passes, the database updates, and the attacker is now an admin.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Remediation</h2>
+                    <p>
+                        To fix this, we must shift our thinking from "Who can access this document?" to "Who can modify this specific field?". We need to validate the incoming data using <code>request.resource.data</code>.
+                    </p>
+                    
+                    <p>Here is the secure implementation:</p>
+
+                    <div class="glass-card rounded-xl p-6 font-code text-sm border-neon-emerald/30 mb-8 overflow-x-auto">
+                        <div class="text-neon-purple">function</div> <span class="text-neon-blue">isUnmodified</span>(field) {
+                        <div class="pl-4 text-gray-300">
+                            <span class="text-neon-purple">return</span> !(field in request.resource.data) || <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(field in resource.data && resource.data[field] == request.resource.data[field]);
+                        </div>
+                        }
+                        <br>
+                        <div class="text-neon-blue">match</div> /users/{userId} {
+                        <div class="pl-4 text-gray-300">
+                            allow read: <span class="text-neon-purple">if</span> request.auth.uid == userId;<br>
+                            <span class="text-gray-500">// Ensure the user cannot change their own role</span><br>
+                            allow write: <span class="text-neon-purple">if</span> request.auth.uid == userId && <span class="text-neon-blue">isUnmodified</span>(<span class="text-yellow-300">'role'</span>);
+                        </div>
+                        }
+                    </div>
+
+                    <p>
+                        By using the <code>isUnmodified</code> custom function, we ensure that while the user can update their name or avatar, any attempt to include a modified <code>role</code> field in the payload will result in a <code>PERMISSION_DENIED</code> error.
+                    </p>
+                </div>
+                
+                <!-- Tags & Share -->
+                <div class="flex flex-col sm:flex-row items-center justify-between mt-16 pt-8 border-t border-white/5">
+                    <div class="flex gap-2 mb-4 sm:mb-0">
+                        <span class="text-xs font-code bg-dark-bg border border-white/10 text-gray-400 px-3 py-1 rounded">#RBAC</span>
+                        <span class="text-xs font-code bg-dark-bg border border-white/10 text-gray-400 px-3 py-1 rounded">#Exploit</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <span class="text-sm text-gray-500 mr-2">Share:</span>
+                        <a href="#" class="text-gray-400 hover:text-neon-blue transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-neon-blue transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- SECTION 3: Sidebar -->
+            <aside class="lg:w-1/3 space-y-10 reveal">
+                
+                <!-- About Author -->
+                <div class="glass-card rounded-xl p-6 border-white/5">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-neon-purple text-white flex items-center justify-center font-bold text-xl mr-4">A</div>
+                        <div>
+                            <h4 class="text-white font-bold">Alex</h4>
+                            <p class="text-xs text-neon-purple font-code">Firebase Security Auditor</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-4">I find holes in NoSQL architectures before the bad guys do. Available for freelance consulting and ruleset rewrites.</p>
+                    <a href="contact.html" class="text-neon-purple text-sm font-semibold hover:text-white transition-colors">Hire Me &rarr;</a>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="glass-card rounded-xl p-6 border-white/5">
+                    <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Recent Intelligence</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="group block">
+                                <h4 class="text-sm text-gray-300 font-semibold group-hover:text-neon-emerald transition-colors line-clamp-2 mb-1">Validating Data Types at the Rule Level</h4>
+                                <span class="text-xs text-gray-600"><i class="fa-regular fa-clock mr-1"></i> 2 days ago</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <h4 class="text-sm text-gray-300 font-semibold group-hover:text-neon-blue transition-colors line-clamp-2 mb-1">Secure Data Modeling for Chat Apps</h4>
+                                <span class="text-xs text-gray-600"><i class="fa-regular fa-clock mr-1"></i> 1 week ago</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group block">
+                                <h4 class="text-sm text-gray-300 font-semibold group-hover:text-yellow-400 transition-colors line-clamp-2 mb-1">Optimizing Rule Evaluation Costs</h4>
+                                <span class="text-xs text-gray-600"><i class="fa-regular fa-clock mr-1"></i> 2 weeks ago</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- SECTION 4: Related Articles -->
+    <section class="py-20 bg-[#08080c] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-white mb-10 reveal">Related Reading</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Related 1 -->
+                <article class="glass-card rounded-xl overflow-hidden reveal border border-white/5 group flex flex-col sm:flex-row">
+                    <div class="w-full sm:w-1/3 h-48 sm:h-auto bg-[#0c0c14] flex items-center justify-center border-b sm:border-b-0 sm:border-r border-white/5">
+                        <i class="fa-solid fa-users-viewfinder text-4xl text-neon-blue/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6 sm:w-2/3 flex flex-col justify-center">
+                        <div class="text-xs text-neon-blue font-semibold mb-2">CASE STUDY</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-neon-blue transition-colors"><a href="#">How We Secured a 1M+ User Fintech App</a></h3>
+                        <a href="#" class="text-gray-400 text-sm font-semibold hover:text-white transition-colors mt-auto">Read Case Study <i class="fa-solid fa-angle-right ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Related 2 -->
+                <article class="glass-card rounded-xl overflow-hidden reveal border border-white/5 group flex flex-col sm:flex-row" style="transition-delay: 100ms;">
+                    <div class="w-full sm:w-1/3 h-48 sm:h-auto bg-[#0c0c14] flex items-center justify-center border-b sm:border-b-0 sm:border-r border-white/5">
+                        <i class="fa-solid fa-shield-virus text-4xl text-red-500/50 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6 sm:w-2/3 flex flex-col justify-center">
+                        <div class="text-xs text-red-500 font-semibold mb-2">VULNERABILITY</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors"><a href="#">The Danger of Using array-contains in Security Rules</a></h3>
+                        <a href="#" class="text-gray-400 text-sm font-semibold hover:text-white transition-colors mt-auto">Read Breakdown <i class="fa-solid fa-angle-right ml-1"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-sm mb-6">
+                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-500 hover:text-white transition-colors text-sm">Home</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Services</a></li>
+                        <li><a href="pricing.html" class="text-gray-500 hover:text-white transition-colors text-sm">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
