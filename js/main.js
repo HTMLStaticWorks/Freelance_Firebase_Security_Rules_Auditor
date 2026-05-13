@@ -6,11 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     document.documentElement.classList.add('light-mode');
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
   }
 
   themeToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       document.documentElement.classList.toggle('light-mode');
+      document.documentElement.classList.toggle('dark');
       
       // Update icon based on mode
       const isLight = document.documentElement.classList.contains('light-mode');

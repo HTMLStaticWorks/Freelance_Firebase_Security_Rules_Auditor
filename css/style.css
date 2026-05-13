@@ -25,6 +25,92 @@
   color: #1a1a1a;
 }
 
+/* Light Mode Overrides for Tailwind Classes */
+.light-mode .text-white,
+.light-mode .text-gray-50,
+.light-mode .text-gray-100,
+.light-mode .text-gray-200,
+.light-mode .text-gray-300 {
+  color: #111827 !important;
+}
+
+.light-mode .text-gray-400,
+.light-mode .text-slate-400 {
+  color: #374151 !important;
+}
+
+.light-mode .text-gray-500,
+.light-mode .text-slate-500 {
+  color: #4b5563 !important;
+}
+
+.light-mode .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.light-mode .text-gray-700 {
+  color: #1f2937 !important;
+}
+
+.light-mode .border-white\/5,
+.light-mode .border-white\/10,
+.light-mode .border-white\/20,
+.light-mode .divide-white\/5 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/10,
+.light-mode .bg-black\/20 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .text-neon-blue { color: var(--neon-blue) !important; }
+.light-mode .text-neon-emerald { color: var(--neon-emerald) !important; }
+.light-mode .text-neon-purple { color: var(--neon-purple) !important; }
+.light-mode .bg-neon-blue\/10 { background-color: rgba(0, 102, 204, 0.1) !important; }
+.light-mode .bg-neon-emerald\/10 { background-color: rgba(0, 153, 51, 0.1) !important; }
+.light-mode .bg-neon-purple\/10 { background-color: rgba(136, 0, 204, 0.1) !important; }
+
+.light-mode .bg-dark-bg { background-color: var(--dark-bg) !important; }
+.light-mode .bg-dark-surface { background-color: var(--dark-surface) !important; }
+
+.light-mode .bg-\[#0d0d14\],
+.light-mode .bg-\[#08080c\],
+.light-mode .bg-\[#0c0c14\],
+.light-mode .bg-\[#050508\],
+.light-mode .bg-\[#12121a\],
+.light-mode .bg-\[#0a0a0f\],
+.light-mode .bg-\[#1a1b26\],
+.light-mode .bg-\[#1e1e2e\] {
+  background-color: #f1f5f9 !important;
+}
+
+.light-mode input.bg-\[#0c0c14\], 
+.light-mode textarea.bg-\[#0c0c14\], 
+.light-mode select.bg-\[#0c0c14\],
+.light-mode input.bg-white\/5,
+.light-mode textarea.bg-white\/5 {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .placeholder-gray-600::placeholder {
+  color: #9ca3af !important;
+}
+
+.light-mode .mix-blend-screen {
+  mix-blend-mode: multiply !important;
+  opacity: 0.1 !important;
+}
+
+.light-mode .selection\:text-white::selection {
+  color: #ffffff !important;
+  background-color: var(--neon-purple) !important;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -171,3 +257,16 @@ body {
   background-color: var(--neon-blue);
   border-radius: 2px;
 }
+
+.light-mode .nav-link:not(.active) {
+  color: #4b5563;
+}
+
+.light-mode .nav-link:not(.active):hover {
+  color: #1a1a1a;
+}
+
+.light-mode .glass {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
