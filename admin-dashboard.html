@@ -50,35 +50,35 @@
             
             <div class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
                 <p class="px-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Overview</p>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg bg-neon-emerald/10 text-neon-emerald font-medium border border-neon-emerald/30">
-                    <i class="fa-solid fa-chart-line w-5 text-center mr-3"></i> Dashboard
+                <a href="#" data-tab="dashboard" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg bg-neon-emerald/10 text-neon-emerald font-medium border border-neon-emerald/30">
+                    <i class="fa-solid fa-chart-line w-5 text-center me-3"></i> Dashboard
                 </a>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-file-code w-5 text-center mr-3"></i> Uploaded Rulesets
-                    <span class="ml-auto bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
+                <a href="#" data-tab="rulesets" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-file-code w-5 text-center me-3"></i> Uploaded Rulesets
+                    <span class="ms-auto bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
                 </a>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-bug w-5 text-center mr-3"></i> Vulnerability Reports
+                <a href="#" data-tab="vulnerabilities" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-bug w-5 text-center me-3"></i> Vulnerability Reports
                 </a>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-rocket w-5 text-center mr-3"></i> Deployment Status
+                <a href="#" data-tab="deployments" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-rocket w-5 text-center me-3"></i> Deployment Status
                 </a>
                 
                 <p class="px-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-8 mb-2">Management</p>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-users w-5 text-center mr-3"></i> Users Management
+                <a href="#" data-tab="users" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-users w-5 text-center me-3"></i> Users Management
                 </a>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-envelope w-5 text-center mr-3"></i> Messages
+                <a href="#" data-tab="messages" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-envelope w-5 text-center me-3"></i> Messages
                 </a>
-                <a href="#" class="flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-list-ul w-5 text-center mr-3"></i> Activity Logs
+                <a href="#" data-tab="logs" class="sidebar-link flex items-center px-3 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-list-ul w-5 text-center me-3"></i> Activity Logs
                 </a>
             </div>
             
             <div class="p-4 border-t border-white/10 shrink-0">
                 <a href="login.html" class="flex items-center px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
-                    <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center mr-3"></i> Logout
+                    <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center me-3"></i> Logout
                 </a>
             </div>
         </aside>
@@ -89,7 +89,7 @@
             <!-- Top Header -->
             <header class="h-20 glass border-b border-white/10 flex items-center justify-between px-6 shrink-0 z-10">
                 <div class="flex items-center">
-                    <button class="md:hidden text-gray-400 hover:text-white mr-4">
+                    <button class="md:hidden text-gray-400 hover:text-white me-4">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                     <h1 class="text-xl font-bold text-white">Dashboard Overview</h1>
@@ -98,6 +98,9 @@
                 <div class="flex items-center space-x-4">
                     <button class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors border border-white/5 bg-dark-surface">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors border border-white/5 bg-dark-surface text-gray-300">
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
                     <div class="w-10 h-10 rounded-full bg-neon-emerald/20 border border-neon-emerald/50 flex items-center justify-center text-neon-emerald font-bold cursor-pointer">
                         A
@@ -111,40 +114,38 @@
                 <!-- Stat Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div class="glass-card p-6 rounded-xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute right-0 top-0 w-16 h-16 bg-neon-blue/10 rounded-bl-full pointer-events-none transition-colors group-hover:bg-neon-blue/20"></div>
+                        <div class="absolute end-0 top-0 w-16 h-16 bg-neon-blue/10 rounded-bs-full pointer-events-none transition-colors group-hover:bg-neon-blue/20"></div>
                         <div class="text-gray-400 text-sm mb-2">Active Audits</div>
                         <div class="text-3xl font-bold text-white mb-2">12</div>
-                        <div class="text-xs text-neon-emerald"><i class="fa-solid fa-arrow-trend-up mr-1"></i> +2 from last week</div>
+                        <div class="text-xs text-neon-emerald"><i class="fa-solid fa-arrow-trend-up me-1"></i> +2 from last week</div>
                     </div>
                     
                     <div class="glass-card p-6 rounded-xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute right-0 top-0 w-16 h-16 bg-red-500/10 rounded-bl-full pointer-events-none transition-colors group-hover:bg-red-500/20"></div>
+                        <div class="absolute end-0 top-0 w-16 h-16 bg-red-500/10 rounded-bs-full pointer-events-none transition-colors group-hover:bg-red-500/20"></div>
                         <div class="text-gray-400 text-sm mb-2">Critical Vulns Found</div>
                         <div class="text-3xl font-bold text-white mb-2">47</div>
-                        <div class="text-xs text-red-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Requires attention</div>
+                        <div class="text-xs text-red-400"><i class="fa-solid fa-triangle-exclamation me-1"></i> Requires attention</div>
                     </div>
                     
                     <div class="glass-card p-6 rounded-xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute right-0 top-0 w-16 h-16 bg-neon-emerald/10 rounded-bl-full pointer-events-none transition-colors group-hover:bg-neon-emerald/20"></div>
+                        <div class="absolute end-0 top-0 w-16 h-16 bg-neon-emerald/10 rounded-bs-full pointer-events-none transition-colors group-hover:bg-neon-emerald/20"></div>
                         <div class="text-gray-400 text-sm mb-2">Rulesets Deployed</div>
                         <div class="text-3xl font-bold text-white mb-2">108</div>
-                        <div class="text-xs text-neon-emerald"><i class="fa-solid fa-check mr-1"></i> 100% success rate</div>
+                        <div class="text-xs text-neon-emerald"><i class="fa-solid fa-check me-1"></i> 100% success rate</div>
                     </div>
                     
                     <div class="glass-card p-6 rounded-xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute right-0 top-0 w-16 h-16 bg-neon-purple/10 rounded-bl-full pointer-events-none transition-colors group-hover:bg-neon-purple/20"></div>
+                        <div class="absolute end-0 top-0 w-16 h-16 bg-neon-purple/10 rounded-bs-full pointer-events-none transition-colors group-hover:bg-neon-purple/20"></div>
                         <div class="text-gray-400 text-sm mb-2">Total Clients</div>
                         <div class="text-3xl font-bold text-white mb-2">84</div>
-                        <div class="text-xs text-neon-purple"><i class="fa-solid fa-users mr-1"></i> +5 new this month</div>
+                        <div class="text-xs text-neon-purple"><i class="fa-solid fa-users me-1"></i> +5 new this month</div>
                     </div>
                 </div>
 
                 <!-- Main Section Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    
+                <div id="tab-dashboard" class="tab-content grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Left Col (Takes up 2/3) -->
                     <div class="lg:col-span-2 space-y-8">
-                        
                         <!-- Analytics Chart Placeholder -->
                         <div class="glass-card p-6 rounded-xl border border-white/5">
                             <div class="flex justify-between items-center mb-6">
@@ -155,18 +156,14 @@
                                     <option>This Year</option>
                                 </select>
                             </div>
-                            
                             <!-- Fake Chart Graphic -->
                             <div class="h-64 border-b border-l border-white/10 relative">
-                                <!-- Grid lines -->
                                 <div class="absolute w-full h-full flex flex-col justify-between">
                                     <div class="border-b border-white/5 w-full h-0"></div>
                                     <div class="border-b border-white/5 w-full h-0"></div>
                                     <div class="border-b border-white/5 w-full h-0"></div>
                                     <div class="border-b border-white/5 w-full h-0"></div>
                                 </div>
-                                
-                                <!-- Fake Bars -->
                                 <div class="absolute bottom-0 w-full h-full flex items-end justify-around px-4">
                                     <div class="w-8 h-[20%] bg-neon-blue/50 rounded-t border border-neon-blue hover:bg-neon-blue transition-colors"></div>
                                     <div class="w-8 h-[50%] bg-neon-blue/50 rounded-t border border-neon-blue hover:bg-neon-blue transition-colors"></div>
@@ -183,9 +180,8 @@
                         <div class="glass-card p-6 rounded-xl border border-white/5">
                             <div class="flex justify-between items-center mb-6">
                                 <h3 class="text-lg font-bold text-white">Recent Ruleset Uploads</h3>
-                                <button class="text-xs text-neon-emerald hover:underline">View All</button>
+                                <button class="text-xs text-neon-emerald hover:underline" onclick="switchTab('rulesets')">View All</button>
                             </div>
-                            
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left text-sm text-gray-400">
                                     <thead class="text-xs uppercase bg-white/5">
@@ -209,22 +205,14 @@
                                             <td class="px-4 py-4"><span class="bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-1 rounded text-xs font-bold">Vulns Found</span></td>
                                             <td class="px-4 py-4"><button class="text-neon-blue hover:text-white transition-colors"><i class="fa-solid fa-eye"></i> View</button></td>
                                         </tr>
-                                        <tr class="hover:bg-white/5 transition-colors">
-                                            <td class="px-4 py-4 text-white font-medium">CollabSpace</td>
-                                            <td class="px-4 py-4 font-code text-xs">firestore.rules</td>
-                                            <td class="px-4 py-4"><span class="bg-neon-emerald/20 text-neon-emerald border border-neon-emerald/30 px-2 py-1 rounded text-xs font-bold">Secure</span></td>
-                                            <td class="px-4 py-4"><button class="text-gray-500 hover:text-white transition-colors"><i class="fa-solid fa-download"></i></button></td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
                     </div>
-                    
+
                     <!-- Right Col (Takes up 1/3) -->
                     <div class="space-y-8">
-                        
                         <!-- Deployment Status List -->
                         <div class="glass-card p-6 rounded-xl border border-white/5">
                             <h3 class="text-lg font-bold text-white mb-6">Deployment Status</h3>
@@ -249,42 +237,256 @@
                                         <div class="text-[10px] text-gray-600 mt-1">15 mins ago</div>
                                     </div>
                                 </div>
-                                <div class="flex items-start">
-                                    <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                                        <i class="fa-solid fa-xmark text-red-400 text-xs"></i>
-                                    </div>
-                                    <div class="ml-3">
-                                        <div class="text-sm font-bold text-white">Prod: SocialNet</div>
-                                        <div class="text-xs text-gray-500">Deployment blocked. Syntax error.</div>
-                                        <div class="text-[10px] text-gray-600 mt-1">1 hour ago</div>
-                                    </div>
-                                </div>
                             </div>
-                            <button class="w-full mt-6 bg-dark-bg border border-white/10 hover:bg-white/5 text-gray-300 py-2 rounded text-sm transition-colors">View All Deployments</button>
+                            <button class="w-full mt-6 bg-dark-bg border border-white/10 hover:bg-white/5 text-gray-300 py-2 rounded text-sm transition-colors" onclick="switchTab('deployments')">View All Deployments</button>
                         </div>
 
-                        <!-- Activity Logs -->
+                        <!-- Quick Messages -->
                         <div class="glass-card p-6 rounded-xl border border-white/5">
-                            <h3 class="text-lg font-bold text-white mb-6">Activity Logs</h3>
-                            <div class="relative border-l border-white/10 ml-2 space-y-6">
-                                <div class="relative pl-6">
-                                    <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neon-blue"></div>
-                                    <p class="text-sm text-gray-300">Client <span class="font-bold text-white">John D.</span> uploaded a new schema definition.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">10:42 AM</p>
+                            <h3 class="text-lg font-bold text-white mb-6">Recent Messages</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="w-10 h-10 rounded-full bg-neon-blue/20 flex items-center justify-center text-neon-blue font-bold text-xs">JD</div>
+                                    <div class="ml-3 flex-1 overflow-hidden">
+                                        <div class="text-sm font-bold text-white truncate">John Doe</div>
+                                        <div class="text-xs text-gray-500 truncate">Can you review the new rules?</div>
+                                    </div>
+                                    <div class="text-[10px] text-gray-600">5m</div>
                                 </div>
-                                <div class="relative pl-6">
-                                    <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neon-purple"></div>
-                                    <p class="text-sm text-gray-300">System generated report for <span class="font-bold text-white">FinPay Startup</span>.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">09:15 AM</p>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple font-bold text-xs">AS</div>
+                                    <div class="ml-3 flex-1 overflow-hidden">
+                                        <div class="text-sm font-bold text-white truncate">Alice Smith</div>
+                                        <div class="text-xs text-gray-500 truncate">Audit report received, thanks!</div>
+                                    </div>
+                                    <div class="text-[10px] text-gray-600">1h</div>
                                 </div>
-                                <div class="relative pl-6">
-                                    <div class="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                                    <p class="text-sm text-gray-300">Admin logged in from new IP.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">Yesterday</p>
+                            </div>
+                            <button class="w-full mt-6 bg-dark-bg border border-white/10 hover:bg-white/5 text-gray-300 py-2 rounded text-sm transition-colors" onclick="switchTab('messages')">Open Inbox</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rulesets Tab -->
+                <div id="tab-rulesets" class="tab-content hidden space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-white">Uploaded Rulesets</h2>
+                        <button class="bg-neon-emerald text-black px-4 py-2 rounded-lg font-bold hover:bg-white transition-all">Upload New Rules</button>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 hover:border-neon-blue transition-colors cursor-pointer">
+                                <div class="flex items-center mb-3 text-neon-blue">
+                                    <i class="fa-solid fa-file-shield text-xl me-2"></i>
+                                    <span class="font-bold">E-Com Pro</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4">Production-ready firestore rules with complex auth logic.</p>
+                                <div class="flex justify-between text-[10px] text-gray-500">
+                                    <span>v2.4.0</span>
+                                    <span>Updated 2h ago</span>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 hover:border-neon-blue transition-colors cursor-pointer">
+                                <div class="flex items-center mb-3 text-neon-purple">
+                                    <i class="fa-solid fa-file-shield text-xl me-2"></i>
+                                    <span class="font-bold">ChatApp Dev</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4">Development ruleset for real-time database hardening.</p>
+                                <div class="flex justify-between text-[10px] text-gray-500">
+                                    <span>v1.0.2</span>
+                                    <span>Updated 1d ago</span>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 hover:border-neon-blue transition-colors cursor-pointer">
+                                <div class="flex items-center mb-3 text-neon-emerald">
+                                    <i class="fa-solid fa-file-shield text-xl me-2"></i>
+                                    <span class="font-bold">Admin Portal</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mb-4">Strict access control rules for organizational backends.</p>
+                                <div class="flex justify-between text-[10px] text-gray-500">
+                                    <span>v3.1.0</span>
+                                    <span>Updated 3d ago</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
+                <!-- Vulnerabilities Tab -->
+                <div id="tab-vulnerabilities" class="tab-content hidden space-y-6">
+                    <h2 class="text-2xl font-bold text-white">Vulnerability Reports</h2>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 bg-red-500/5 border border-red-500/20 rounded-lg">
+                                <i class="fa-solid fa-circle-exclamation text-red-500 text-2xl me-4"></i>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-white text-sm">Wildcard Write Access Detected</h4>
+                                    <p class="text-xs text-gray-400">Project: HealthSync | Location: firestore.rules:L45</p>
+                                </div>
+                                <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-[10px] font-bold uppercase tracking-wider">Critical</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-yellow-500/5 border border-yellow-500/20 rounded-lg">
+                                <i class="fa-solid fa-triangle-exclamation text-yellow-500 text-2xl me-4"></i>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-white text-sm">Missing Auth Validation in 'update'</h4>
+                                    <p class="text-xs text-gray-400">Project: SocialNet | Location: database.rules.json:L122</p>
+                                </div>
+                                <span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-[10px] font-bold uppercase tracking-wider">High</span>
+                            </div>
+                            <div class="flex items-center p-4 bg-neon-blue/5 border border-neon-blue/20 rounded-lg">
+                                <i class="fa-solid fa-circle-info text-neon-blue text-2xl me-4"></i>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-white text-sm">Inefficient Query Filter</h4>
+                                    <p class="text-xs text-gray-400">Project: E-Com Pro | Location: firestore.rules:L89</p>
+                                </div>
+                                <span class="px-2 py-1 bg-neon-blue/20 text-neon-blue rounded text-[10px] font-bold uppercase tracking-wider">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div id="tab-users" class="tab-content hidden space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-white">Users Management</h2>
+                        <button class="bg-neon-blue text-black px-4 py-2 rounded-lg font-bold hover:bg-white transition-all">Add New User</button>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-blue/20 flex items-center justify-center text-neon-blue text-xl font-bold">JD</div>
+                                <div class="flex-1 overflow-hidden">
+                                    <div class="font-bold text-white truncate">John Doe</div>
+                                    <div class="text-xs text-gray-500 truncate">john@startup.com</div>
+                                    <div class="mt-2 flex space-x-2">
+                                        <span class="px-2 py-0.5 bg-neon-blue/10 text-neon-blue rounded text-[8px] font-bold uppercase">Client</span>
+                                        <span class="px-2 py-0.5 bg-neon-emerald/10 text-neon-emerald rounded text-[8px] font-bold uppercase">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple text-xl font-bold">AS</div>
+                                <div class="flex-1 overflow-hidden">
+                                    <div class="font-bold text-white truncate">Alice Smith</div>
+                                    <div class="text-xs text-gray-500 truncate">alice@enterprise.io</div>
+                                    <div class="mt-2 flex space-x-2">
+                                        <span class="px-2 py-0.5 bg-neon-purple/10 text-neon-purple rounded text-[8px] font-bold uppercase">Manager</span>
+                                        <span class="px-2 py-0.5 bg-neon-emerald/10 text-neon-emerald rounded text-[8px] font-bold uppercase">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-lg border border-white/10 flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-neon-emerald/20 flex items-center justify-center text-neon-emerald text-xl font-bold">BK</div>
+                                <div class="flex-1 overflow-hidden">
+                                    <div class="font-bold text-white truncate">Bob Knight</div>
+                                    <div class="text-xs text-gray-500 truncate">bob@fireaudit.com</div>
+                                    <div class="mt-2 flex space-x-2">
+                                        <span class="px-2 py-0.5 bg-neon-emerald/10 text-neon-emerald rounded text-[8px] font-bold uppercase">Admin</span>
+                                        <span class="px-2 py-0.5 bg-neon-emerald/10 text-neon-emerald rounded text-[8px] font-bold uppercase">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Tab -->
+                <div id="tab-messages" class="tab-content hidden space-y-6 h-full flex flex-col">
+                    <h2 class="text-2xl font-bold text-white">Communications Center</h2>
+                    <div class="glass-card flex-1 rounded-xl border border-white/5 flex overflow-hidden min-h-[500px]">
+                        <!-- Message Sidebar -->
+                        <div class="w-1/3 border-e border-white/10 bg-white/5">
+                            <div class="p-4 border-b border-white/10 flex space-x-2">
+                                <input type="text" placeholder="Search conversations..." class="w-full bg-dark-bg border border-white/10 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-neon-blue">
+                            </div>
+                            <div class="divide-y divide-white/5 overflow-y-auto">
+                                <div class="p-4 hover:bg-neon-blue/5 cursor-pointer bg-neon-blue/5 border-s-4 border-neon-blue transition-colors">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-bold text-white text-sm">FinPay Support</span>
+                                        <span class="text-[10px] text-gray-500">12:30 PM</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400 truncate">The new ruleset seems to block our admin portal. Can you check?</p>
+                                </div>
+                                <div class="p-4 hover:bg-white/5 cursor-pointer transition-colors">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-bold text-white text-sm">HealthSync Security</span>
+                                        <span class="text-[10px] text-gray-500">Yesterday</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400 truncate">We've applied the critical mitigations suggested in the report.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Message View -->
+                        <div class="flex-1 flex flex-col bg-[#0c0c14]">
+                            <div class="p-4 border-b border-white/10 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-neon-blue/20 flex items-center justify-center text-neon-blue font-bold text-xs font-code">FP</div>
+                                    <span class="font-bold text-white">FinPay Support</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-gray-400"><i class="fa-solid fa-phone text-xs"></i></button>
+                                    <button class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-gray-400"><i class="fa-solid fa-ellipsis-vertical text-xs"></i></button>
+                                </div>
+                            </div>
+                            <div class="flex-1 p-6 space-y-6 overflow-y-auto">
+                                <div class="flex items-start max-w-[80%]">
+                                    <div class="p-3 bg-white/5 rounded-lg border border-white/10">
+                                        <p class="text-xs text-gray-300">The new ruleset seems to block our admin portal. Can you check L45 in firestore.rules?</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start justify-end">
+                                    <div class="p-3 bg-neon-blue/10 rounded-lg border border-neon-blue/20 max-w-[80%]">
+                                        <p class="text-xs text-white">Checking it now. It looks like the recursive wildcard might be too restrictive for your specific UID pattern.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-white/10 bg-dark-surface">
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-500 hover:text-white"><i class="fa-solid fa-paperclip"></i></button>
+                                    <input type="text" placeholder="Type a message..." class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-neon-blue">
+                                    <button class="bg-neon-blue text-black p-2 rounded-lg hover:bg-white transition-all"><i class="fa-solid fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logs Tab -->
+                <div id="tab-logs" class="tab-content hidden space-y-6">
+                    <h2 class="text-2xl font-bold text-white">System Activity Logs</h2>
+                    <div class="glass-card p-6 rounded-xl border border-white/5">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm text-gray-400">
+                                <thead class="text-xs uppercase bg-white/5">
+                                    <tr>
+                                        <th class="px-4 py-3">Timestamp</th>
+                                        <th class="px-4 py-3">Event</th>
+                                        <th class="px-4 py-3">User</th>
+                                        <th class="px-4 py-3">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/5">
+                                    <tr>
+                                        <td class="px-4 py-3 font-code text-[10px]">2026-05-13 14:32:01</td>
+                                        <td class="px-4 py-3 text-white">Ruleset Deployment Success</td>
+                                        <td class="px-4 py-3">System-Automated</td>
+                                        <td class="px-4 py-3"><span class="text-neon-emerald">Success</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-code text-[10px]">2026-05-13 13:15:44</td>
+                                        <td class="px-4 py-3 text-white">New User Registered</td>
+                                        <td class="px-4 py-3">FinPay Admin</td>
+                                        <td class="px-4 py-3"><span class="text-neon-blue">Info</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-code text-[10px]">2026-05-13 12:05:12</td>
+                                        <td class="px-4 py-3 text-white">Security Vulnerability Found</td>
+                                        <td class="px-4 py-3">FireAudit-Scanner</td>
+                                        <td class="px-4 py-3"><span class="text-red-400">Warning</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -293,6 +495,47 @@
     </div>
 
     <!-- Main JS -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Show selected tab content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            
+            // Update sidebar links
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('bg-neon-emerald/10', 'text-neon-emerald', 'border-neon-emerald/30');
+                link.classList.add('text-gray-400');
+                if (link.getAttribute('data-tab') === tabId) {
+                    link.classList.add('bg-neon-emerald/10', 'text-neon-emerald', 'border-neon-emerald/30');
+                    link.classList.remove('text-gray-400');
+                }
+            });
+
+            // Update header title
+            const titles = {
+                'dashboard': 'Dashboard Overview',
+                'rulesets': 'Ruleset Management',
+                'vulnerabilities': 'Security Findings',
+                'deployments': 'Deployment Pipelines',
+                'users': 'User Directory',
+                'messages': 'Communications',
+                'logs': 'Audit Trails'
+            };
+            document.querySelector('header h1').textContent = titles[tabId] || 'Dashboard';
+        }
+
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tabId = link.getAttribute('data-tab');
+                switchTab(tabId);
+            });
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

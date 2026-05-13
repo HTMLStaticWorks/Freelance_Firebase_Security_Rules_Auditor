@@ -38,43 +38,56 @@
         }
     </script>
 </head>
-<body class="antialiased selection:bg-neon-emerald selection:text-black">
+<body class="antialiased selection:bg-neon-emerald selection:text-black bg-dark-bg text-gray-200">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
-                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl me-2 animate-pulse-glow rounded-full"></i>
                     <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
-                        <a href="index-2.html" class="nav-link active hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 2</a>
+                    <div class="ms-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="nav-link active text-white px-3 py-2 text-sm font-medium flex items-center group">
+                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            </button>
+                            <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
+                                <a href="index-2.html" class="nav-link block px-4 py-2 text-sm text-white bg-white/5 font-bold transition-colors">Home 2</a>
+                            </div>
+                        </div>
                         <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
                         <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
                         <a href="pricing.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
+                            <button class="rtl-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-300 border border-white/10">
+                                <span class="text-xs font-bold">RTL</span>
+                            </button>
                             <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Login</a>
-                            <a href="admin-dashboard.html" class="bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30 hover:bg-neon-emerald hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,255,102,0.2)]">Dashboard</a>
+                            <a href="admin-dashboard.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Dashboard</a>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button class="rtl-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-300 border border-white/10">
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -83,18 +96,29 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 1</a>
-                <a href="index-2.html" class="text-neon-emerald block px-3 py-2 rounded-md text-base font-medium">Home 2</a>
-                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="services.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-                <a href="pricing.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
-                <a href="portfolio.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                <a href="login.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium border border-white/10 text-center mb-2">Login</a>
-                <a href="admin-dashboard.html" class="text-neon-emerald block px-3 py-2 rounded-md text-base font-medium mt-4 border border-neon-emerald/30 text-center">Dashboard</a>
+                <div class="relative">
+                    <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        Home <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden pl-4 space-y-1">
+                        <a href="index.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 1</a>
+                        <a href="index-2.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white bg-white/10">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">About</a>
+                <a href="services.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Services</a>
+                <a href="pricing.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Pricing</a>
+                <a href="portfolio.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Portfolio</a>
+                <a href="contact.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contact</a>
+                <div class="pt-4 pb-3 border-t border-white/10">
+                    <div class="flex items-center px-5 space-x-3">
+                        <a href="login.html" class="block text-gray-300 hover:text-white font-medium">Login</a>
+                        <a href="admin-dashboard.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Dashboard</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -113,7 +137,7 @@
                     <span class="text-sm font-code text-gray-300">Firebase v10.x Ready</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white">
                     Flawless Security for <br>
                     <span class="text-gradient-emerald">Firestore & Realtime DB</span>
                 </h1>
@@ -123,7 +147,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="contact.html" class="bg-neon-emerald text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full sm:w-auto">
+                    <a href="contact.html" class="bg-neon-emerald text-black hover:bg-white hover:scale-105 transition-all px-8 py-4 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full sm:w-auto">
                         Start Security Review
                     </a>
                     <a href="#timeline" class="text-gray-300 hover:text-neon-emerald transition-colors font-semibold flex items-center group">
@@ -138,7 +162,7 @@
     <section id="timeline" class="py-24 border-y border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20 reveal">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">The Audit <span class="text-neon-emerald">Workflow</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">The Audit <span class="text-neon-emerald">Workflow</span></h2>
                 <p class="text-gray-400">A rigorous, methodical approach to securing your Firebase backend.</p>
             </div>
 
@@ -205,13 +229,13 @@
     <section class="py-24 bg-[#08080c]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Beyond <span class="text-gradient">Read/Write</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Beyond <span class="text-gradient">Read/Write</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">True security requires validating exactly what data is being written. I implement strict schema enforcement at the rule level.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Example 1 -->
-                <div class="glass-card rounded-xl overflow-hidden reveal border-white/5">
+                <div class="glass-card rounded-xl overflow-hidden reveal border-white/5 hover:border-neon-emerald/30 hover:-translate-y-1 transition-all duration-300">
                     <div class="bg-[#1e1e2e] p-4 flex items-center justify-between border-b border-white/5">
                         <div class="text-sm font-semibold text-white"><i class="fa-solid fa-money-bill-wave text-neon-emerald mr-2"></i> Financial Transaction Validation</div>
                     </div>
@@ -231,7 +255,7 @@
                 </div>
 
                 <!-- Example 2 -->
-                <div class="glass-card rounded-xl overflow-hidden reveal border-white/5" style="transition-delay: 100ms;">
+                <div class="glass-card rounded-xl overflow-hidden reveal border-white/5 hover:border-neon-blue/30 hover:-translate-y-1 transition-all duration-300" style="transition-delay: 100ms;">
                     <div class="bg-[#1e1e2e] p-4 flex items-center justify-between border-b border-white/5">
                         <div class="text-sm font-semibold text-white"><i class="fa-solid fa-users-gear text-neon-blue mr-2"></i> Role-Based Access Control (RBAC)</div>
                     </div>
@@ -258,7 +282,7 @@
     <!-- SECTION 4: Vulnerability Scanner Preview -->
     <section class="py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card rounded-2xl p-2 bg-[#0c0c14] border-white/10 reveal shadow-2xl">
+            <div class="glass-card rounded-2xl p-2 bg-[#0c0c14] border-white/10 reveal shadow-2xl hover:border-white/20 transition-all duration-500">
                 <!-- Fake Terminal Window -->
                 <div class="bg-[#1a1b26] rounded-xl overflow-hidden border border-white/5">
                     <div class="flex items-center px-4 py-3 bg-[#11111a] border-b border-white/5">
@@ -294,6 +318,42 @@
     </section>
 
     <!-- SECTION 5: Pricing Cards -->
+    
+    <!-- SECTION: Philosophy Content -->
+    <section class="py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-neon-emerald/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 text-center">Security by Design: <br><span class="text-gradient-emerald">Zero Trust Philosophy</span></h2>
+                    <div class="space-y-6 text-gray-400 leading-relaxed text-lg max-w-3xl mx-auto">
+                        <p>
+                            In the world of Firebase, security isn't a feature you add at the end; it's the foundation you build upon. My philosophy is rooted in <span class="text-white">Zero Trust</span>—assuming that every request, even from authenticated users, is potentially malicious until proven otherwise by your ruleset.
+                        </p>
+                        <p>
+                            We move beyond simple "is the user logged in?" checks. We implement <span class="text-neon-emerald">Granular Permissioning</span> that inspects the internal state of documents, validates data types, and cross-references multi-tenant access levels. This ensures that even if a user's account is compromised, the damage they can do is strictly limited by the rules I've crafted.
+                        </p>
+                        <p>
+                            By utilizing custom validation functions and recursive resource checking, I build a security layer that is not only impenetrable but also optimized for performance, ensuring your app stays fast while remaining completely locked down.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                        <div class="glass p-6 rounded-xl border-white/5 text-center">
+                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-microchip text-neon-emerald mr-2"></i> Logic Enforcement</h4>
+                            <p class="text-sm text-gray-500">Rules that understand your business logic, not just database paths.</p>
+                        </div>
+                        <div class="glass p-6 rounded-xl border-white/5 text-center">
+                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-layer-group text-neon-blue mr-2"></i> Multi-Tenant Safety</h4>
+                            <p class="text-sm text-gray-500">Total isolation of user data in shared collection architectures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Pricing Cards -->
     <section class="py-24 bg-dark-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
@@ -303,73 +363,124 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Basic Audit -->
-                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col">
+                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col h-full text-center hover:border-neon-emerald/30 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,102,0.1)]">
                     <h3 class="text-xl font-bold text-white mb-2">Basic Review</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">Best for small apps looking for glaring vulnerabilities.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">$499 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Automated Scanning
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Manual Rule Review
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> PDF Vulnerability Report
                         </li>
-                        <li class="flex items-start text-sm text-gray-600 line-through">
+                        <li class="flex items-start justify-center text-sm text-gray-600 line-through">
                             <i class="fa-solid fa-xmark mt-1 mr-3"></i> Custom Rule Implementation
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white">Select Basic</a>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white mt-auto">Select Basic</a>
                 </div>
 
                 <!-- Premium Implementation (Highlighted) -->
-                <div class="glass-card p-8 rounded-2xl reveal border border-neon-emerald/50 relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,255,102,0.1)] flex flex-col">
+                <div class="glass-card p-8 rounded-2xl reveal border border-neon-emerald/50 relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,255,102,0.1)] flex flex-col h-full text-center hover:md:-translate-y-6 hover:shadow-[0_0_40px_rgba(0,255,102,0.2)] transition-all duration-300">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-neon-emerald text-black text-xs font-bold px-3 py-1 rounded-b-md uppercase tracking-wider">Most Popular</div>
                     <h3 class="text-xl font-bold text-white mb-2 mt-2">Full Remediation</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">End-to-end audit, reporting, and writing new rules.</p>
                     <div class="text-3xl font-extrabold text-neon-emerald mb-6">$1,299 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Everything in Basic
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Local Emulator Testing
                         </li>
-                        <li class="flex items-start text-sm text-white font-semibold">
+                        <li class="flex items-start justify-center text-sm text-white font-semibold">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Complete Rule Rewrite
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> 30-Day Post-Launch Support
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center bg-neon-emerald text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,255,102,0.3)]">Get Fully Secured</a>
+                    <a href="contact.html" class="w-full block text-center bg-neon-emerald text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,255,102,0.3)] mt-auto">Get Fully Secured</a>
                 </div>
 
                 <!-- Enterprise -->
-                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col">
+                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col h-full text-center hover:border-neon-purple/30 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_30px_rgba(176,38,255,0.1)]">
                     <h3 class="text-xl font-bold text-white mb-2">Enterprise Retainer</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">Ongoing security for actively evolving architectures.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">Custom <span class="text-sm font-normal text-gray-500">/month</span></div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Architecture Consulting
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Monthly Audits
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> CI/CD Pipeline Integration
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Priority Slack Support
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white">Contact Sales</a>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white mt-auto">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Enterprise CTA -->
+    
+    <!-- SECTION: Compliance Content -->
+    <section class="py-24 bg-[#08080c] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 text-center">Compliance & <br><span class="text-neon-blue">Future-Proofing</span></h2>
+                    <div class="space-y-6 text-gray-400 leading-relaxed text-lg max-w-3xl mx-auto">
+                        <p>
+                            As your application grows, so does your regulatory responsibility. Whether you're aiming for <span class="text-white">GDPR, HIPAA, or SOC2 compliance</span>, the security of your data layer is the most scrutinized component. My audits are designed to satisfy the most rigorous technical requirements of these frameworks.
+                        </p>
+                        <p>
+                            I don't just fix today's problems; I prepare your architecture for tomorrow's scale. Poorly written rules can cause significant performance bottlenecks as your user base grows. I optimize your rules to minimize database lookups and ensure that security never comes at the cost of user experience.
+                        </p>
+                        <p>
+                            By building a "Security-First" culture through code, I empower your development team to move faster with the confidence that the core data layer is protected by elite-level safeguards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto reveal">
+                <div class="glass-card p-10 rounded-2xl border-white/10 relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 opacity-10">
+                        <i class="fa-solid fa-server text-9xl text-neon-blue"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-8 flex items-center justify-center text-2xl text-center"><i class="fa-solid fa-check-double text-neon-emerald mr-3"></i> Audit Checklist</h4>
+                    <ul class="space-y-6 text-gray-500 max-w-xl mx-auto">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
+                            <span class="text-left">Complete isolation of PII (Personally Identifiable Information).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
+                            <span class="text-left">Enforcement of strict type-checking on all write operations.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
+                            <span class="text-left">Prevention of "Collection Group" query leaks.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
+                            <span class="text-left">Rate-limiting simulation via rule-based request throttling.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -384,7 +495,7 @@
                     <p class="text-gray-400">Join the companies that trust FireAudit to keep their user data safe. Let's discuss your specific Firebase architecture.</p>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="contact.html" class="bg-white text-black hover:bg-neon-emerald transition-colors px-8 py-4 rounded-md font-bold">
+                    <a href="contact.html" class="bg-white text-black hover:bg-neon-emerald hover:scale-105 transition-all px-8 py-4 rounded-md font-bold">
                         Start Your Audit <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -396,18 +507,18 @@
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
+                <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
                         <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
                     </div>
-                    <p class="text-gray-500 text-sm max-w-sm mb-6">
-                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    <p class="text-gray-500 text-sm mb-6">
+                        Professional freelance auditing services for Firebase applications.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-emerald hover:border-neon-emerald transition-all"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-emerald hover:border-neon-emerald transition-all"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-emerald hover:border-neon-emerald transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
@@ -429,6 +540,17 @@
                         <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors text-sm">Contact</a></li>
                         <li><a href="login.html" class="text-gray-500 hover:text-white transition-colors text-sm">Client Portal</a></li>
                     </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
+                    <p class="text-gray-500 text-sm mb-6">Subscribe for the latest security insights and Firebase tips.</p>
+                    <form class="flex h-12">
+                        <input type="email" placeholder="Email Address" class="flex-1 bg-white/5 border border-white/10 border-r-0 rounded-l-lg px-4 text-sm text-white focus:outline-none focus:border-neon-blue transition-colors">
+                        <button type="submit" class="bg-neon-blue text-black px-5 rounded-r-lg hover:bg-white transition-all flex items-center justify-center group">
+                            <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             

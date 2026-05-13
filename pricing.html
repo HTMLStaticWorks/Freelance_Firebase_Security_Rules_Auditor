@@ -38,43 +38,56 @@
         }
     </script>
 </head>
-<body class="antialiased selection:bg-neon-blue selection:text-black">
+<body class="antialiased selection:bg-neon-blue selection:text-black bg-dark-bg text-gray-200">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass border-b border-white/10 transition-all duration-300">
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
-                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl mr-2 animate-pulse-glow rounded-full"></i>
+                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl me-2 animate-pulse-glow rounded-full"></i>
                     <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 1</a>
-                        <a href="index-2.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Home 2</a>
+                    <div class="ms-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
+                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            </button>
+                            <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
+                                <a href="index-2.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 2</a>
+                            </div>
+                        </div>
                         <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">About</a>
                         <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="pricing.html" class="nav-link active hover:text-white transition-colors px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="pricing.html" class="nav-link active text-white px-3 py-2 text-sm font-medium">Pricing</a>
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-l border-white/10 pl-4">
+                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
+                            </button>
+                            <button class="rtl-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-300 border border-white/10">
+                                <span class="text-xs font-bold">RTL</span>
                             </button>
                             <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Login</a>
                             <a href="admin-dashboard.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Dashboard</a>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
+                    </button>
+                    <button class="rtl-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-300 border border-white/10">
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -84,35 +97,47 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full">
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 1</a>
-                <a href="index-2.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home 2</a>
+                <div class="relative">
+                    <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        Home <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden pl-4 space-y-1">
+                        <a href="index.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 1</a>
+                        <a href="index-2.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 2</a>
+                    </div>
+                </div>
                 <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
                 <a href="services.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-                <a href="pricing.html" class="text-neon-blue block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="pricing.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white bg-white/10">Pricing</a>
                 <a href="portfolio.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
                 <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                <a href="login.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium border border-white/10 text-center mb-2">Login</a>
-                <a href="admin-dashboard.html" class="text-neon-blue block px-3 py-2 rounded-md text-base font-medium mt-4 border border-neon-blue/30 text-center">Dashboard</a>
+                <div class="pt-4 pb-3 border-t border-white/10">
+                    <div class="flex items-center px-5 space-x-3">
+                        <a href="login.html" class="block text-gray-300 hover:text-white font-medium">Login</a>
+                        <a href="admin-dashboard.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Dashboard</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- SECTION 1: Pricing Hero -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-24 relative overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-24 relative overflow-hidden bg-dark-bg">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/50 to-dark-bg"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-blue/20 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal active">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
                 <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
                     No hidden fees. Just elite-level security audits scaled to fit the size and complexity of your Firebase application.
                 </p>
-                <div class="inline-flex items-center justify-center p-1 bg-dark-surface border border-white/10 rounded-full">
-                    <button class="px-6 py-2 rounded-full bg-white/10 text-white text-sm font-semibold transition-all">Per Project</button>
-                    <button class="px-6 py-2 rounded-full text-gray-500 hover:text-white text-sm font-semibold transition-all">Retainer</button>
+                <div class="inline-flex items-center justify-center p-1 bg-dark-surface border border-white/10 rounded-full" id="pricing-toggle-container">
+                    <button id="btn-project" class="px-6 py-2 rounded-full bg-neon-blue text-black text-sm font-semibold transition-all">Per Project</button>
+                    <button id="btn-retainer" class="px-6 py-2 rounded-full text-gray-500 hover:text-white text-sm font-semibold transition-all">Retainer</button>
                 </div>
             </div>
         </div>
@@ -121,33 +146,34 @@
     <!-- SECTION 2: Pricing Cards -->
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Project Grid -->
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto transition-all duration-500">
                 <!-- Basic Audit -->
-                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col hover:border-neon-blue/30 transition-colors duration-300">
+                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col hover:border-neon-blue/30 transition-colors duration-300 text-center h-full">
                     <h3 class="text-xl font-bold text-white mb-2">Basic Audit</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">Identify vulnerabilities in your current ruleset.</p>
                     <div class="text-4xl font-extrabold text-white mb-2">$499</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Automated Scanning
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Manual Rule Review
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> PDF Vulnerability Report
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> 30-Min Consultation
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-blue hover:text-black hover:border-neon-blue transition-all py-3 rounded-md font-semibold text-white">Select Basic</a>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-blue hover:text-black hover:border-neon-blue transition-all py-3 rounded-md font-semibold text-white mt-auto">Select Basic</a>
                 </div>
 
                 <!-- Full Remediation (Highlighted) -->
-                <div class="glass-card p-8 rounded-2xl reveal border-2 border-neon-blue relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,240,255,0.15)] flex flex-col">
+                <div class="glass-card p-8 rounded-2xl reveal border-2 border-neon-blue relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,240,255,0.15)] flex flex-col text-center h-full">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-neon-blue text-black text-xs font-bold px-4 py-1 rounded-b-md uppercase tracking-wider">Most Popular</div>
                     <h3 class="text-xl font-bold text-white mb-2 mt-2">Full Remediation</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">End-to-end audit and complete ruleset rewrite.</p>
@@ -155,47 +181,126 @@
                     <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Everything in Basic
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Local Emulator Testing
                         </li>
-                        <li class="flex items-start text-sm text-white font-semibold">
+                        <li class="flex items-start justify-center text-sm text-white font-semibold">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Complete Rule Rewrite
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> 30-Day Post-Launch Support
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Architecture Review
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center bg-neon-blue text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,240,255,0.3)]">Get Fully Secured</a>
+                    <a href="contact.html" class="w-full block text-center bg-neon-blue text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,240,255,0.3)] mt-auto">Get Fully Secured</a>
                 </div>
 
                 <!-- Enterprise -->
-                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col hover:border-neon-purple/30 transition-colors duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Enterprise Retainer</h3>
-                    <p class="text-gray-400 text-sm mb-6 h-10">Ongoing security for actively evolving apps.</p>
+                <div class="glass-card p-8 rounded-2xl reveal border border-white/5 flex flex-col hover:border-neon-purple/30 transition-colors duration-300 text-center h-full">
+                    <h3 class="text-xl font-bold text-white mb-2">Enterprise Audit</h3>
+                    <p class="text-gray-400 text-sm mb-6 h-10">For complex, multi-service architectures.</p>
+                    <div class="text-4xl font-extrabold text-white mb-2">Custom</div>
+                    <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Multi-Project Review
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Cloud Functions Security
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Infrastructure as Code
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Compliance Certification
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-purple hover:text-white hover:border-neon-purple transition-all py-3 rounded-md font-semibold text-white mt-auto">Request Quote</a>
+                </div>
+            </div>
+
+            <!-- Retainer Grid (Hidden Initially) -->
+            <div id="retainer-grid" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto transition-all duration-500">
+                <!-- Maintenance -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col hover:border-neon-blue/30 transition-colors duration-300 text-center h-full">
+                    <h3 class="text-xl font-bold text-white mb-2">Security Watch</h3>
+                    <p class="text-gray-400 text-sm mb-6 h-10">Ongoing monitoring for stable applications.</p>
+                    <div class="text-4xl font-extrabold text-white mb-2">$299</div>
+                    <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Monthly Security Scan
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Critical Rule Updates
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Quarterly Performance Check
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Email Support
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-blue hover:text-black hover:border-neon-blue transition-all py-3 rounded-md font-semibold text-white mt-auto">Subscribe</a>
+                </div>
+
+                <!-- Growth (Highlighted) -->
+                <div class="glass-card p-8 rounded-2xl border-2 border-neon-emerald relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,255,102,0.15)] flex flex-col text-center h-full">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-neon-emerald text-black text-xs font-bold px-4 py-1 rounded-b-md uppercase tracking-wider">High Velocity</div>
+                    <h3 class="text-xl font-bold text-white mb-2 mt-2">Active Security</h3>
+                    <p class="text-gray-400 text-sm mb-6 h-10">Dedicated partner for apps in active development.</p>
+                    <div class="text-4xl font-extrabold text-neon-emerald mb-2">$899</div>
+                    <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Bi-Weekly Rule Reviews
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Feature-Specific Security
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-white font-semibold">
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Priority Slack Channel
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> CI/CD Pipeline Monitoring
+                        </li>
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Unlimited Consultations
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full block text-center bg-neon-emerald text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,255,102,0.3)] mt-auto">Get Dedicated Support</a>
+                </div>
+
+                <!-- Strategic Dedicated -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col hover:border-neon-purple/30 transition-colors duration-300 text-center h-full">
+                    <h3 class="text-xl font-bold text-white mb-2">Enterprise Partner</h3>
+                    <p class="text-gray-400 text-sm mb-6 h-10">Complete security management for major platforms.</p>
                     <div class="text-4xl font-extrabold text-white mb-2">Custom</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Monthly Audits
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Dedicated Security Engineer
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Unlimited Rule Updates
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> 24/7 Incident Response
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> CI/CD Pipeline Integration
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Annual Risk Assessments
                         </li>
-                        <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Priority Slack Support
+                        <li class="flex items-start justify-center text-sm text-gray-300">
+                            <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Global Compliance Support
                         </li>
                     </ul>
-                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-purple hover:text-white hover:border-neon-purple transition-all py-3 rounded-md font-semibold text-white">Contact Sales</a>
+                    <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-neon-purple hover:text-white hover:border-neon-purple transition-all py-3 rounded-md font-semibold text-white mt-auto">Contact Partner</a>
                 </div>
             </div>
         </div>
@@ -209,73 +314,83 @@
             </div>
 
             <div class="glass-card rounded-2xl overflow-hidden reveal border border-white/10 overflow-x-auto">
-                <table class="w-full text-left text-sm text-gray-400 min-w-[600px]">
+                <table class="w-full text-left text-sm text-gray-400 min-w-[800px]">
                     <thead class="text-xs text-gray-300 uppercase bg-white/5 border-b border-white/10">
                         <tr>
                             <th scope="col" class="px-6 py-4">Features</th>
-                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 w-1/4">Basic Audit</th>
-                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/10 text-neon-blue w-1/4">Full Remediation</th>
+                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 w-1/5">Basic</th>
+                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/10 text-neon-blue w-1/5">Remediation</th>
+                            <th scope="col" class="px-6 py-4 text-center border-l border-white/10 w-1/5 text-neon-purple">Retainer</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-white/5">
                         <!-- Audit & Discovery -->
                         <tr class="bg-black/20">
-                            <td colspan="3" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Audit & Discovery</td>
+                            <td colspan="4" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Audit & Discovery</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Automated Vulnerability Scan</td>
                             <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Manual Logical Review</td>
                             <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Architecture & Schema Review</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
 
                         <!-- Implementation -->
                         <tr class="bg-black/20">
-                            <td colspan="3" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Implementation</td>
+                            <td colspan="4" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Implementation</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Detailed Vulnerability PDF</td>
                             <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-blue"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Ruleset Rewrite</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Custom Validation Functions</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
 
                         <!-- Testing & Support -->
                         <tr class="bg-black/20">
-                            <td colspan="3" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Testing & Support</td>
+                            <td colspan="4" class="px-6 py-2 text-xs font-bold text-gray-500 uppercase">Testing & Support</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Emulator Test Scripts Provided</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5"><i class="fa-solid fa-check text-neon-blue"></i></td>
+                            <td class="px-6 py-4 text-center border-l border-white/10"><i class="fa-solid fa-check text-neon-purple"></i></td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Video Call Consultation</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-white font-semibold">30 mins</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5 text-white font-semibold">2 hours</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 text-white font-semibold">Monthly</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition-colors">
                             <td class="px-6 py-4 text-white">Post-Delivery Support</td>
                             <td class="px-6 py-4 text-center border-l border-white/10 text-gray-600"><i class="fa-solid fa-minus"></i></td>
                             <td class="px-6 py-4 text-center border-l border-white/10 bg-neon-blue/5 text-white font-semibold">30 Days</td>
+                            <td class="px-6 py-4 text-center border-l border-white/10 text-white font-semibold">Ongoing</td>
                         </tr>
                     </tbody>
                 </table>
@@ -326,14 +441,19 @@
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
+                <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
                         <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
                     </div>
-                    <p class="text-gray-500 text-sm max-w-sm mb-6">
-                        Professional freelance auditing services dedicated to securing Firebase applications against modern web threats.
+                    <p class="text-gray-500 text-sm mb-6">
+                        Professional freelance auditing services for Firebase applications.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 
                 <div>
@@ -341,6 +461,7 @@
                     <ul class="space-y-3">
                         <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Security Audits</a></li>
                         <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Custom Rulesets</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm">Architecture Review</a></li>
                         <li><a href="pricing.html" class="text-gray-500 hover:text-white transition-colors text-sm">Pricing</a></li>
                     </ul>
                 </div>
@@ -351,17 +472,62 @@
                         <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm">About</a></li>
                         <li><a href="portfolio.html" class="text-gray-500 hover:text-white transition-colors text-sm">Portfolio</a></li>
                         <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors text-sm">Contact</a></li>
+                        <li><a href="login.html" class="text-gray-500 hover:text-white transition-colors text-sm">Client Portal</a></li>
                     </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
+                    <p class="text-gray-500 text-sm mb-6">Subscribe for the latest security insights and Firebase tips.</p>
+                    <form class="flex h-12">
+                        <input type="email" placeholder="Email Address" class="flex-1 bg-white/5 border border-white/10 border-r-0 rounded-l-lg px-4 text-sm text-white focus:outline-none focus:border-neon-blue transition-colors">
+                        <button type="submit" class="bg-neon-blue text-black px-5 rounded-r-lg hover:bg-white transition-all flex items-center justify-center group">
+                            <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-600">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    <script>
+        // Pricing Toggle Script
+        const btnProject = document.getElementById('btn-project');
+        const btnRetainer = document.getElementById('btn-retainer');
+        const projectGrid = document.getElementById('project-grid');
+        const retainerGrid = document.getElementById('retainer-grid');
+
+        btnProject.addEventListener('click', () => {
+            btnProject.classList.add('bg-neon-blue', 'text-black');
+            btnProject.classList.remove('text-gray-500', 'hover:text-white');
+            
+            btnRetainer.classList.remove('bg-neon-blue', 'text-black');
+            btnRetainer.classList.add('text-gray-500', 'hover:text-white');
+
+            projectGrid.classList.remove('hidden');
+            retainerGrid.classList.add('hidden');
+        });
+
+        btnRetainer.addEventListener('click', () => {
+            btnRetainer.classList.add('bg-neon-blue', 'text-black');
+            btnRetainer.classList.remove('text-gray-500', 'hover:text-white');
+            
+            btnProject.classList.remove('bg-neon-blue', 'text-black');
+            btnProject.classList.add('text-gray-500', 'hover:text-white');
+
+            retainerGrid.classList.remove('hidden');
+            projectGrid.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>

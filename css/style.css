@@ -44,6 +44,10 @@
   color: #4b5563 !important;
 }
 
+.light-mode .text-yellow-300 {
+  color: #a16207 !important; /* Darker yellow/gold for visibility */
+}
+
 .light-mode .text-gray-600 {
   color: #4b5563 !important;
 }
@@ -72,23 +76,51 @@
 .light-mode .bg-neon-emerald\/10 { background-color: rgba(0, 153, 51, 0.1) !important; }
 .light-mode .bg-neon-purple\/10 { background-color: rgba(136, 0, 204, 0.1) !important; }
 
-.light-mode .bg-dark-bg { background-color: var(--dark-bg) !important; }
+.light-mode .bg-dark-bg,
+.light-mode .from-dark-bg,
+.light-mode .to-dark-bg { 
+  background-color: var(--dark-bg) !important; 
+  --tw-gradient-from: var(--dark-bg) !important;
+  --tw-gradient-to: var(--dark-bg) !important;
+  --tw-gradient-stops: var(--dark-bg), var(--dark-bg) !important;
+}
 .light-mode .bg-dark-surface { background-color: var(--dark-surface) !important; }
 
-.light-mode .bg-\[#0d0d14\],
-.light-mode .bg-\[#08080c\],
-.light-mode .bg-\[#0c0c14\],
-.light-mode .bg-\[#050508\],
-.light-mode .bg-\[#12121a\],
-.light-mode .bg-\[#0a0a0f\],
-.light-mode .bg-\[#1a1b26\],
-.light-mode .bg-\[#1e1e2e\] {
-  background-color: #f1f5f9 !important;
+.light-mode .from-dark-bg\/50 {
+  --tw-gradient-from: rgba(248, 249, 250, 0.5) !important;
 }
 
-.light-mode input.bg-\[#0c0c14\], 
-.light-mode textarea.bg-\[#0c0c14\], 
-.light-mode select.bg-\[#0c0c14\],
+.light-mode .bg-\[\#0d0d14\],
+.light-mode .bg-\[\#08080c\],
+.light-mode .bg-\[\#0c0c14\],
+.light-mode .bg-\[\#050508\],
+.light-mode .from-\[\#050508\],
+.light-mode .from-\[\#08080c\],
+.light-mode .to-\[\#050508\],
+.light-mode .to-\[\#08080c\],
+.light-mode .bg-\[\#12121a\],
+.light-mode .bg-\[\#0a0a0f\],
+.light-mode .bg-\[\#1a1b26\],
+.light-mode .bg-\[\#1e1e2e\],
+.light-mode .bg-\[\#11111a\],
+.light-mode .bg-gray-700,
+.light-mode .bg-gray-800,
+.light-mode .bg-gray-900,
+.light-mode .bg-slate-800,
+.light-mode .bg-slate-900 {
+  background-color: #f1f5f9 !important;
+  --tw-gradient-from: #f1f5f9 !important;
+  --tw-gradient-to: #f1f5f9 !important;
+  --tw-gradient-stops: #f1f5f9, #f1f5f9 !important;
+}
+
+.light-mode iframe {
+  filter: grayscale(1) brightness(1.2) contrast(0.8) !important;
+}
+
+.light-mode input.bg-\[\#0c0c14\], 
+.light-mode textarea.bg-\[\#0c0c14\], 
+.light-mode select.bg-\[\#0c0c14\],
 .light-mode input.bg-white\/5,
 .light-mode textarea.bg-white\/5 {
   background-color: #ffffff !important;
@@ -99,6 +131,11 @@
 .light-mode .placeholder-gray-600::placeholder {
   color: #9ca3af !important;
 }
+
+.light-mode .text-gray-400 { color: #4b5563 !important; }
+.light-mode .text-gray-300 { color: #374151 !important; }
+.light-mode .text-gray-200 { color: #1a1a1a !important; }
+.light-mode .text-white { color: #000000 !important; }
 
 .light-mode .mix-blend-screen {
   mix-blend-mode: multiply !important;

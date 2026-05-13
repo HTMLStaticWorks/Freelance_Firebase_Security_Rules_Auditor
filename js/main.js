@@ -83,4 +83,40 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks[i].classList.add("active");
     }
   }
+  // --- RTL Toggle ---
+  const rtlToggleBtns = document.querySelectorAll('.rtl-toggle');
+  
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir === 'rtl') {
+    document.documentElement.dir = 'rtl';
+    document.documentElement.classList.add('rtl');
+  } else {
+    document.documentElement.dir = 'ltr';
+    document.documentElement.classList.remove('rtl');
+  }
+
+  const updateRTLButtons = (dir) => {
+    rtlToggleBtns.forEach(b => {
+      b.innerHTML = `<span class="text-xs font-bold">${dir === 'rtl' ? 'LTR' : 'RTL'}</span>`;
+    });
+  };
+
+  rtlToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isRTL = document.documentElement.dir === 'rtl';
+      const newDir = isRTL ? 'ltr' : 'rtl';
+      document.documentElement.dir = newDir;
+      if (newDir === 'rtl') {
+        document.documentElement.classList.add('rtl');
+      } else {
+        document.documentElement.classList.remove('rtl');
+      }
+      localStorage.setItem('dir', newDir);
+      updateRTLButtons(newDir);
+    });
+    
+    // Set initial text
+    const currentDir = document.documentElement.dir || 'ltr';
+    btn.innerHTML = `<span class="text-xs font-bold">${currentDir === 'rtl' ? 'LTR' : 'RTL'}</span>`;
+  });
 });
