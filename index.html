@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Security Rules Auditor | Secure Your App</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Freelance Firebase Security Rules Auditor. Protect your Firestore and Realtime Database with professional security audits.">
     
     <!-- Tailwind CSS -->
@@ -42,7 +43,7 @@
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
@@ -51,11 +52,11 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ms-10 flex items-baseline space-x-8">
+                <div class="hidden lg:block">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
                         <div class="relative group">
-                            <button class="nav-link active text-white px-3 py-2 text-sm font-medium flex items-center group">
-                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            <button class="text-white px-3 py-2 text-sm font-medium flex items-center group">
+                                <span class="nav-link active">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
                             </button>
                             <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
@@ -68,7 +69,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
+                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -82,7 +83,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -97,7 +98,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
+        <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
                     <button class="w-full text-left text-white bg-white/10 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
@@ -126,14 +127,14 @@
     <!-- SECTION 1: Hero -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <!-- Abstract Background -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-20 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] opacity-20 pointer-events-none">
             <div class="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple blur-[100px] rounded-full mix-blend-screen"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
                 <!-- Text Content -->
-                <div class="reveal active">
+                <div class="reveal active w-full">
                     <div class="inline-block px-4 py-1.5 rounded-full border border-neon-emerald/30 bg-neon-emerald/10 text-neon-emerald text-sm font-semibold mb-6">
                         <i class="fa-solid fa-lock mr-2"></i> Firebase Security Auditor
                     </div>
@@ -141,10 +142,10 @@
                         Secure Your <br>
                         <span class="text-gradient">Firestore Data</span>
                     </h1>
-                    <p class="text-lg text-gray-400 mb-8 max-w-xl">
+                    <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0">
                         Don't let open security rules compromise your users. I analyze, test, and deploy enterprise-grade Firebase Security Rules to stop data breaches before they happen.
                     </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
                         <a href="contact.html" class="bg-neon-blue text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold text-center shadow-[0_0_20px_rgba(0,240,255,0.4)]">
                             Get a Free Audit
                         </a>
@@ -155,7 +156,7 @@
                 </div>
 
                 <!-- Animated Dashboard Preview -->
-                <div class="relative reveal active animate-float">
+                <div class="relative reveal active animate-float w-full">
                     <div class="glass-card rounded-xl p-6 relative overflow-hidden border border-white/10 shadow-2xl">
                         <!-- Dashboard Header -->
                         <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
@@ -197,9 +198,9 @@
 
     <!-- SECTION 2: Trusted by / Statistics -->
     <section class="py-10 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8 reveal">Trusted by 50+ scaling startups</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center reveal">
                 <div>
                     <div class="text-4xl font-extrabold text-white mb-2">500+</div>
                     <div class="text-sm text-gray-400">Rulesets Audited</div>
@@ -222,7 +223,7 @@
 
     <!-- SECTION 3: Services Grid -->
     <section class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Enterprise-Grade <span class="text-gradient">Security</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive auditing and implementation services tailored specifically for the Firebase ecosystem.</p>
@@ -260,7 +261,7 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass-card rounded-2xl reveal group text-center flex flex-col h-full relative overflow-hidden" style="transition-delay: 200ms;">
+                <div class="glass-card p-8 rounded-2xl reveal border-white/5 hover:border-neon-purple/30 hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full" style="transition-delay: 200ms;">
                     <div class="absolute inset-0 z-0">
                         <img src="images/architecture_review_bg.png" alt="Architecture Review" class="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-dark-bg via-white/80 dark:via-dark-bg/80 to-transparent"></div>
@@ -279,7 +280,7 @@
 
     <!-- SECTION: Technical Deliverables -->
     <section class="py-24 border-y border-white/5 bg-dark-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">What You Receive: <span class="text-neon-emerald">The Technical Edge</span></h2>
@@ -316,7 +317,7 @@
 
     <!-- SECTION 4: Common Attack Patterns -->
     <section class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Stop <span class="text-red-400">Attack Vectors</span> Dead in Their Tracks</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Most Firebase breaches happen due to simple misconfigurations. I protect against the most common and devastating attacks.</p>
@@ -333,7 +334,7 @@
                             I simulate complex multi-step attacks, such as document injection via parent collection exploits and privilege escalation through malformed custom claims. The goal is to ensure your rules are robust against both current threats and future architectural changes.
                         </p>
                     </div>
-                    <div class="glass-card rounded-xl p-1 font-code text-sm">
+                    <div class="glass-card rounded-xl p-1 font-code text-sm overflow-x-auto break-all">
                         <div class="bg-[#1e1e2e] rounded-lg p-6">
                             <div class="flex items-center space-x-2 mb-4">
                                 <i class="fa-solid fa-bug text-red-400"></i>
@@ -390,13 +391,13 @@
     <section class="py-24 relative overflow-hidden">
         <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-neon-purple/20 blur-[120px] rounded-full pointer-events-none"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Secured <span class="text-gradient">Foundations</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">See what engineering teams say about the peace of mind an audit brings.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div class="glass-card p-8 rounded-2xl reveal relative text-center flex flex-col h-full">
                     <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-white/5"></i>
@@ -430,7 +431,7 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="glass-card p-8 rounded-2xl reveal relative text-center flex flex-col h-full" style="transition-delay: 200ms;">
+                <div class="glass-card p-8 rounded-2xl reveal relative text-center flex flex-col h-full md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full" style="transition-delay: 200ms;">
                     <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-white/5"></i>
                     <div class="flex justify-center text-yellow-400 mb-4 text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -452,7 +453,7 @@
     
     <!-- SECTION: Narrative Content -->
     <section class="py-24 border-t border-white/5 bg-[#08080c]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
             <div class="max-w-4xl mx-auto mb-16">
                 <div class="reveal">
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">The Silent Threat: <br><span class="text-neon-blue">Default Rules</span></h2>
@@ -519,8 +520,8 @@
 
     <!-- Footer -->
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>

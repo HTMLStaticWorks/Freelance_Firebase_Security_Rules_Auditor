@@ -150,7 +150,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
 
 body {
   font-family: 'Inter', sans-serif;
@@ -234,6 +236,15 @@ body {
   50% { border-color: var(--neon-emerald); }
 }
 
+@media (max-width: 640px) {
+  .typing-container {
+    white-space: normal !important;
+    border-right: none !important;
+    animation: none !important;
+  }
+}
+
+
 /* Scroll Reveal */
 .reveal {
   opacity: 0;
@@ -281,7 +292,7 @@ body {
 
 /* Navbar active state */
 .nav-link.active {
-  color: var(--neon-blue);
+  color: var(--neon-blue) !important;
   position: relative;
 }
 .nav-link.active::after {
@@ -306,4 +317,69 @@ body {
 .light-mode .glass {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
+
+/* Mobile & Tablet Menu Visibility & Alignment Fix */
+@media (max-width: 1024px) {
+  nav.glass {
+    background-color: var(--dark-bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  #mobile-menu {
+    background-color: var(--dark-surface) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    z-index: 100;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  #mobile-menu a, 
+  #mobile-menu button {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #mobile-menu .pl-4 {
+    padding-left: 0 !important;
+  }
+
+  #mobile-menu .justify-between {
+    justify-content: center !important;
+    position: relative;
+  }
+
+  #mobile-menu .fa-chevron-down {
+    position: static !important;
+    margin-left: 0.5rem !important;
+  }
+
+
+  #mobile-menu .flex.items-center.px-5 {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+
+  #mobile-menu .flex.items-center.px-5 > a {
+    width: 100% !important;
+    margin-bottom: 0.75rem;
+    margin-left: 0 !important;
+  }
+
+  #mobile-menu .flex.items-center.px-5 > a:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.light-mode #mobile-menu {
+  background-color: var(--dark-surface) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+
 

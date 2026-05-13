@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Firebase Security Auditor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Get in touch to secure your Firebase architecture. Book a free 15-minute consultation.">
     
     <!-- Tailwind CSS -->
@@ -51,11 +52,11 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ms-10 flex items-baseline space-x-8">
+                <div class="hidden lg:block">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
                         <div class="relative group">
-                            <button class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
-                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            <button class="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
+                                <span class="nav-link">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
                             </button>
                             <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
@@ -68,7 +69,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link active text-white px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
+                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -82,7 +83,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -97,7 +98,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
+        <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
                     <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
@@ -146,7 +147,7 @@
                         <h3 class="text-2xl font-bold text-white mb-6">Send an Encrypted Message</h3>
                         
                         <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
                                     <input type="text" class="w-full bg-[#0c0c14] border border-white/10 rounded-md px-4 py-3 text-sm text-white focus:outline-none focus:border-neon-emerald focus:ring-1 focus:ring-neon-emerald transition-all" placeholder="Jane Doe">
@@ -201,12 +202,12 @@
                 </div>
 
                 <!-- SECTION 3: Details & Map -->
-                <div class="reveal lg:pl-8">
+                <div class="reveal lg:pl-8 text-center lg:text-left">
                     <h3 class="text-2xl font-bold text-white mb-8">Direct Contact</h3>
                     
                     <div class="space-y-8 mb-12">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                        <div class="flex flex-col items-center lg:flex-row lg:items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mb-4 lg:mb-0 lg:mr-4">
                                 <i class="fa-solid fa-envelope text-neon-emerald"></i>
                             </div>
                             <div>
@@ -216,8 +217,8 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                        <div class="flex flex-col items-center lg:flex-row lg:items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mb-4 lg:mb-0 lg:mr-4">
                                 <i class="fa-brands fa-slack text-neon-emerald"></i>
                             </div>
                             <div>
@@ -227,8 +228,8 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mr-4">
+                        <div class="flex flex-col items-center lg:flex-row lg:items-start">
+                            <div class="w-12 h-12 rounded-full bg-neon-emerald/10 flex items-center justify-center border border-neon-emerald/30 mb-4 lg:mb-0 lg:mr-4">
                                 <i class="fa-solid fa-globe text-neon-emerald"></i>
                             </div>
                             <div>
@@ -305,7 +306,7 @@
     <!-- Footer -->
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>

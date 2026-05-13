@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Firebase Security Auditor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Learn about the freelance Firebase security auditor behind FireAudit.">
     
     <!-- Tailwind CSS -->
@@ -51,11 +52,11 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ms-10 flex items-baseline space-x-8">
+                <div class="hidden lg:block">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
                         <div class="relative group">
-                            <button class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
-                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            <button class="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
+                                <span class="nav-link">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
                             </button>
                             <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
@@ -68,7 +69,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
+                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -82,7 +83,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -97,7 +98,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
+        <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
                     <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
@@ -171,7 +172,7 @@
                 <p class="text-gray-400 max-w-2xl mx-auto">Security shouldn't be an afterthought. It must be woven into the fabric of your data architecture.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="reveal text-center group">
                     <div class="w-full h-40 rounded-xl overflow-hidden glass-card border-white/5 mb-6 relative">
                         <img src="images/philosophy_lock.png" alt="Default Deny" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
@@ -190,7 +191,7 @@
                     <p class="text-gray-400 text-sm leading-relaxed">Rules aren't just for access. They are the ultimate schema enforcers, ensuring data integrity by validating types, lengths, and constraints.</p>
                 </div>
                 
-                <div class="reveal text-center group" style="transition-delay: 200ms;">
+                <div class="reveal text-center group md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full" style="transition-delay: 200ms;">
                     <div class="w-full h-40 rounded-xl overflow-hidden glass-card border-white/5 mb-6 relative">
                         <img src="images/architecture_review_bg.png" alt="Performance Aware" class="w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#08080c] to-transparent opacity-60"></div>
@@ -283,7 +284,7 @@
     <!-- Footer -->
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>

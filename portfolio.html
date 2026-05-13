@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Firebase Security Architect</title>
+    <title>Portfolio | Firebase Security Auditor</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Explore my portfolio of secure Firebase architectures, attack pattern mitigations, and data validation samples.">
     
     <!-- Tailwind CSS -->
@@ -51,11 +52,11 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ms-10 flex items-baseline space-x-8">
+                <div class="hidden lg:block">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
                         <div class="relative group">
-                            <button class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
-                                Home <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                            <button class="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
+                                <span class="nav-link">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
                             </button>
                             <div class="absolute start-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-dark-surface border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <a href="index.html" class="nav-link block px-4 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">Home 1</a>
@@ -68,7 +69,7 @@
                         <a href="portfolio.html" class="nav-link active text-white px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center space-x-4 border-s border-white/10 ps-4">
+                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -82,7 +83,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center space-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -97,7 +98,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
+        <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
                     <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
@@ -130,10 +131,10 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal active">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white">
+                <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 text-white">
                     Security <span class="text-gradient">Portfolio</span>
                 </h1>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
                     A technical deep-dive into the architectures I've secured and the attack vectors I've neutralized. From Fintech to Healthcare, witness the power of bulletproof rules.
                 </p>
             </div>
@@ -280,7 +281,7 @@
                 <p class="text-gray-400 max-w-2xl mx-auto">Every project concludes with a comprehensive hand-off of technical artifacts and strategic documentation.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="glass-card p-8 rounded-2xl reveal text-center border-white/5">
                     <div class="w-16 h-16 rounded-full bg-neon-blue/10 flex items-center justify-center mb-6 mx-auto border border-neon-blue/20">
                         <i class="fa-solid fa-code text-neon-blue text-2xl"></i>
@@ -297,7 +298,7 @@
                     <p class="text-gray-400 text-sm leading-relaxed">A detailed PDF documenting every identified vulnerability, its severity, and how the new ruleset mitigates the risk.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl reveal text-center border-white/5" style="transition-delay: 200ms;">
+                <div class="glass-card p-8 rounded-2xl reveal text-center border-white/5 md:col-span-2 lg:col-span-1 md:w-1/2 md:mx-auto lg:w-full" style="transition-delay: 200ms;">
                     <div class="w-16 h-16 rounded-full bg-neon-purple/10 flex items-center justify-center mb-6 mx-auto border border-neon-purple/20">
                         <i class="fa-solid fa-vial-circle-check text-neon-purple text-2xl"></i>
                     </div>
@@ -336,7 +337,7 @@
                         <p class="text-gray-400 mb-6 leading-relaxed">
                             Attackers try to upgrade their account roles (e.g., to 'admin') by including extra fields in an update request.
                         </p>
-                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-6">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-6 overflow-x-auto break-all">
                             <h4 class="text-sm font-bold text-red-400 uppercase mb-4 tracking-wider">The Exploit</h4>
                             <div class="font-code text-xs text-gray-500">
                                 db.collection('users').doc(myUid).update({ <br>
@@ -351,7 +352,7 @@
                             <span class="text-xs font-code text-gray-400">firestore.rules (Defense)</span>
                             <i class="fa-solid fa-shield-check text-neon-emerald"></i>
                         </div>
-                        <div class="p-8 font-code text-sm">
+                        <div class="p-8 font-code text-sm overflow-x-auto break-all">
                             <div class="text-neon-blue">match</div> /users/{userId} { <br>
                             <div class="pl-6">
                                 <span class="text-neon-blue">allow</span> update: <span class="text-neon-purple">if</span> request.auth.uid == userId <br>
@@ -372,7 +373,7 @@
                                 <span class="text-xs font-code text-gray-400">firestore.rules (Defense)</span>
                                 <i class="fa-solid fa-shield-check text-neon-blue"></i>
                             </div>
-                            <div class="p-8 font-code text-sm">
+                            <div class="p-8 font-code text-sm overflow-x-auto break-all">
                                 <div class="text-neon-blue">match</div> /products/{prodId} { <br>
                                 <div class="pl-6">
                                     <span class="text-neon-blue">allow</span> list: <span class="text-neon-purple">if</span> <span class="text-neon-emerald">request.query.limit <= 20</span>;
@@ -391,7 +392,7 @@
                         <p class="text-gray-400 mb-6 leading-relaxed">
                             Bots attempt to download your entire database by performing large queries without limits.
                         </p>
-                        <div class="bg-neon-blue/5 border border-neon-blue/20 rounded-lg p-6">
+                        <div class="bg-neon-blue/5 border border-neon-blue/20 rounded-lg p-6 overflow-x-auto break-all">
                             <h4 class="text-sm font-bold text-neon-blue uppercase mb-4 tracking-wider">The Exploit</h4>
                             <div class="font-code text-xs text-gray-500">
                                 <span class="text-gray-400">// Fetching 10,000+ docs at once</span> <br>
@@ -420,7 +421,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Type & Format Validation</h3>
                     <p class="text-gray-400 text-sm mb-6">Ensuring incoming data fields match expected types and specific formats (like email regex).</p>
-                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto">
+                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto overflow-x-auto break-all">
                         <span class="text-neon-purple">function</span> <span class="text-neon-blue">isValidUser</span>(data) { <br>
                         &nbsp;&nbsp;<span class="text-neon-purple">return</span> data.email <span class="text-neon-purple">is string</span> <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&& <span class="text-neon-emerald">data.email.matches('^.+@.+$')</span> <br>
@@ -437,7 +438,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Field Immutability</h3>
                     <p class="text-gray-400 text-sm mb-6">Protecting critical fields from being changed after creation (e.g., creation dates, user IDs).</p>
-                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto">
+                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto overflow-x-auto break-all">
                         <span class="text-neon-purple">function</span> <span class="text-neon-blue">noFieldChanges</span>(field) { <br>
                         &nbsp;&nbsp;<span class="text-neon-purple">return</span> <span class="text-neon-emerald">!(field in request.resource.data)</span> <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;|| <span class="text-neon-emerald">request.resource.data[field] == resource.data[field]</span>; <br>
@@ -454,7 +455,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Strict Schema Enforcement</h3>
                     <p class="text-gray-400 text-sm mb-6">Preventing 'ghost' fields by ensuring only allowed keys are present in the incoming resource.</p>
-                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto">
+                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto overflow-x-auto break-all">
                         <span class="text-neon-purple">function</span> <span class="text-neon-blue">strictSchema</span>(data, allowedKeys) { <br>
                         &nbsp;&nbsp;<span class="text-neon-purple">return</span> <span class="text-neon-emerald">data.keys().hasOnly(allowedKeys)</span>; <br>
                         } <br>
@@ -471,7 +472,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Relationship Validation</h3>
                     <p class="text-gray-400 text-sm mb-6">Ensuring references to other documents exist before allowing a document to be created.</p>
-                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto">
+                    <div class="bg-dark-bg p-4 rounded-xl font-code text-[11px] leading-relaxed text-gray-400 border border-white/5 mt-auto overflow-x-auto break-all">
                         <span class="text-neon-blue">allow</span> create: <span class="text-neon-purple">if</span> <br>
                         &nbsp;&nbsp;<span class="text-neon-emerald">exists(/databases/$(database)/documents/orgs/$(request.resource.data.orgId))</span>;
                     </div>
@@ -523,7 +524,7 @@
     <!-- Footer -->
     <footer class="bg-[#050508] border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
