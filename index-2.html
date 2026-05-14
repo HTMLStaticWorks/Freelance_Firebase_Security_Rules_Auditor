@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +35,12 @@
                         }
                     }
                 }
-            }
+            },
+            plugins: [
+                function({ addVariant }) {
+                    addVariant('light-mode', '.light-mode &')
+                }
+            ]
         }
     </script>
 </head>
@@ -126,7 +131,7 @@
 
     <!-- SECTION 1: Niche Hero -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
-        <div class="absolute inset-0 bg-gradient-to-b from-dark-bg via-dark-bg/95 to-dark-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b dark:from-dark-bg from-white/80 via-dark-bg/95 to-dark-bg"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="text-center max-w-4xl mx-auto reveal active">
@@ -138,7 +143,7 @@
                     <span class="text-sm font-code text-gray-300">Firebase v10.x Ready</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-white light-mode:text-black">
                     Flawless Security for <br>
                     <span class="text-gradient-emerald">Firestore & Realtime DB</span>
                 </h1>
@@ -369,17 +374,17 @@
                     <p class="text-gray-400 text-sm mb-6 h-10">Best for small apps looking for glaring vulnerabilities.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">$499 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Automated Scanning
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Manual Rule Review
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> PDF Vulnerability Report
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-600 line-through">
+                        <li class="flex items-start text-sm text-gray-600 line-through">
                             <i class="fa-solid fa-xmark mt-1 mr-3"></i> Custom Rule Implementation
                         </li>
                     </ul>
@@ -393,17 +398,17 @@
                     <p class="text-gray-400 text-sm mb-6 h-10">End-to-end audit, reporting, and writing new rules.</p>
                     <div class="text-3xl font-extrabold text-neon-emerald mb-6">$1,299 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Everything in Basic
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Local Emulator Testing
                         </li>
-                        <li class="flex items-start justify-center text-sm text-white font-semibold">
+                        <li class="flex items-start text-sm text-white font-semibold">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Complete Rule Rewrite
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> 30-Day Post-Launch Support
                         </li>
                     </ul>
@@ -416,17 +421,17 @@
                     <p class="text-gray-400 text-sm mb-6 h-10">Ongoing security for actively evolving architectures.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">Custom <span class="text-sm font-normal text-gray-500">/month</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Architecture Consulting
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Monthly Audits
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> CI/CD Pipeline Integration
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Priority Slack Support
                         </li>
                     </ul>
@@ -518,7 +523,7 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -536,10 +541,10 @@
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
                     <ul class="space-y-3">
-                        <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm">About</a></li>
-                        <li><a href="portfolio.html" class="text-gray-500 hover:text-white transition-colors text-sm">Portfolio</a></li>
-                        <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors text-sm">Contact</a></li>
-                        <li><a href="login.html" class="text-gray-500 hover:text-white transition-colors text-sm">Client Portal</a></li>
+                        <li><a href="about.html" class="text-gray-500 hover:text-neon-blue transition-all duration-300 text-sm hover:translate-x-1 inline-block">About</a></li>
+                        <li><a href="portfolio.html" class="text-gray-500 hover:text-neon-blue transition-all duration-300 text-sm hover:translate-x-1 inline-block">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-neon-blue transition-all duration-300 text-sm hover:translate-x-1 inline-block">Contact</a></li>
+                        <li><a href="login.html" class="text-gray-500 hover:text-neon-blue transition-all duration-300 text-sm hover:translate-x-1 inline-block">Client Portal</a></li>
                     </ul>
                 </div>
 

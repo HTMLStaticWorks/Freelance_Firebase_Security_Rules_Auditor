@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +35,12 @@
                         }
                     }
                 }
-            }
+            },
+            plugins: [
+                function({ addVariant }) {
+                    addVariant('light-mode', '.light-mode &')
+                }
+            ]
         }
     </script>
 </head>
@@ -69,7 +74,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
+                        <div class="flex items-center gap-x-2 xl:gap-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -83,7 +88,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center gap-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -126,13 +131,13 @@
 
     <!-- SECTION 1: Pricing Hero -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-24 relative overflow-hidden bg-dark-bg">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/50 to-dark-bg"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] dark:opacity-50 opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b dark:from-dark-bg/50 from-white/70 via-white/50 to-dark-bg"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-blue/20 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal active">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white light-mode:text-black">Simple, Transparent <span class="text-gradient">Pricing</span></h1>
                 <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
                     No hidden fees. Just elite-level security audits scaled to fit the size and complexity of your Firebase application.
                 </p>
@@ -156,17 +161,17 @@
                     <div class="text-4xl font-extrabold text-white mb-2">$499</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Automated Scanning
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Manual Rule Review
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> PDF Vulnerability Report
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> 30-Min Consultation
                         </li>
                     </ul>
@@ -181,20 +186,20 @@
                     <div class="text-4xl font-extrabold text-neon-blue mb-2">$1,299</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Everything in Basic
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Local Emulator Testing
                         </li>
-                        <li class="flex items-start justify-center text-sm text-white font-semibold">
+                        <li class="flex items-start text-sm text-white font-semibold">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Complete Rule Rewrite
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> 30-Day Post-Launch Support
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Architecture Review
                         </li>
                     </ul>
@@ -208,17 +213,17 @@
                     <div class="text-4xl font-extrabold text-white mb-2">Custom</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/project</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Multi-Project Review
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Cloud Functions Security
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Infrastructure as Code
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Compliance Certification
                         </li>
                     </ul>
@@ -235,17 +240,17 @@
                     <div class="text-4xl font-extrabold text-white mb-2">$299</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Monthly Security Scan
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Critical Rule Updates
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Quarterly Performance Check
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-blue mt-1 mr-3"></i> Email Support
                         </li>
                     </ul>
@@ -260,20 +265,20 @@
                     <div class="text-4xl font-extrabold text-neon-emerald mb-2">$899</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Bi-Weekly Rule Reviews
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Feature-Specific Security
                         </li>
-                        <li class="flex items-start justify-center text-sm text-white font-semibold">
+                        <li class="flex items-start text-sm text-white font-semibold">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Priority Slack Channel
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> CI/CD Pipeline Monitoring
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Unlimited Consultations
                         </li>
                     </ul>
@@ -287,17 +292,17 @@
                     <div class="text-4xl font-extrabold text-white mb-2">Custom</div>
                     <div class="text-sm text-gray-500 mb-8 font-code">/month</div>
                     
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                    <ul class="space-y-4 mb-8 flex-1 inline-flex flex-col items-start mx-auto">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Dedicated Security Engineer
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> 24/7 Incident Response
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Annual Risk Assessments
                         </li>
-                        <li class="flex items-start justify-center text-sm text-gray-300">
+                        <li class="flex items-start text-sm text-gray-300">
                             <i class="fa-solid fa-check text-neon-purple mt-1 mr-3"></i> Global Compliance Support
                         </li>
                     </ul>
@@ -404,26 +409,57 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
             <h2 class="text-3xl font-bold text-center mb-12">Pricing FAQs</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                <!-- FAQ -->
-                <div class="glass-card rounded-lg p-6 border-white/5">
-                    <h4 class="text-lg font-bold text-white mb-2">How does the payment process work?</h4>
-                    <p class="text-sm text-gray-400">For Basic Audits, 100% is required upfront. For Full Remediation, 50% is required to begin work, and 50% upon delivery of the final ruleset and report.</p>
+            <div class="max-w-3xl mx-auto space-y-4 mb-16">
+                <!-- FAQ 1 -->
+                <div class="bg-white dark:bg-dark-surface rounded-xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none group" onclick="togglePricingFaq(this)">
+                        <span class="text-lg font-bold text-gray-900 dark:text-white transition-colors group-hover:text-neon-blue">How does the payment process work?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 dark:text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden faq-content">
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            For Basic Audits, 100% is required upfront. For Full Remediation, 50% is required to begin work, and 50% upon delivery of the final ruleset and report.
+                        </p>
+                    </div>
                 </div>
-                <!-- FAQ -->
-                <div class="glass-card rounded-lg p-6 border-white/5">
-                    <h4 class="text-lg font-bold text-white mb-2">What if my app is very large?</h4>
-                    <p class="text-sm text-gray-400">The standard Full Remediation package covers apps with up to 15 unique Firestore collections. For highly complex enterprise apps, we will provide a custom quote.</p>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white dark:bg-dark-surface rounded-xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none group" onclick="togglePricingFaq(this)">
+                        <span class="text-lg font-bold text-gray-900 dark:text-white transition-colors group-hover:text-neon-blue">What if my app is very large?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 dark:text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden faq-content">
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            The standard Full Remediation package covers apps with up to 15 unique Firestore collections. For highly complex enterprise apps, we will provide a custom quote.
+                        </p>
+                    </div>
                 </div>
-                <!-- FAQ -->
-                <div class="glass-card rounded-lg p-6 border-white/5">
-                    <h4 class="text-lg font-bold text-white mb-2">Do you offer refunds?</h4>
-                    <p class="text-sm text-gray-400">If I am unable to discover any vulnerabilities or improve your ruleset during the Discovery phase, I will refund the project in full.</p>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white dark:bg-dark-surface rounded-xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none group" onclick="togglePricingFaq(this)">
+                        <span class="text-lg font-bold text-gray-900 dark:text-white transition-colors group-hover:text-neon-blue">Do you offer refunds?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 dark:text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden faq-content">
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            If I am unable to discover any vulnerabilities or improve your ruleset during the Discovery phase, I will refund the project in full.
+                        </p>
+                    </div>
                 </div>
-                <!-- FAQ -->
-                <div class="glass-card rounded-lg p-6 border-white/5">
-                    <h4 class="text-lg font-bold text-white mb-2">Can you sign an NDA?</h4>
-                    <p class="text-sm text-gray-400">Absolutely. I routinely sign NDAs before viewing any architecture documents or rulesets. Client confidentiality is paramount.</p>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white dark:bg-dark-surface rounded-xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden transition-all duration-300">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none group" onclick="togglePricingFaq(this)">
+                        <span class="text-lg font-bold text-gray-900 dark:text-white transition-colors group-hover:text-neon-blue">Can you sign an NDA?</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 dark:text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden faq-content">
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Absolutely. I routinely sign NDAs before viewing any architecture documents or rulesets. Client confidentiality is paramount.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -452,7 +488,7 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -520,15 +556,26 @@
         });
 
         btnRetainer.addEventListener('click', () => {
-            btnRetainer.classList.add('bg-neon-blue', 'text-black');
-            btnRetainer.classList.remove('text-gray-500', 'hover:text-white');
-            
-            btnProject.classList.remove('bg-neon-blue', 'text-black');
-            btnProject.classList.add('text-gray-500', 'hover:text-white');
-
             retainerGrid.classList.remove('hidden');
             projectGrid.classList.add('hidden');
         });
+
+        // FAQ Toggle Script
+        function togglePricingFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Toggle current one
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                icon.classList.add('text-neon-blue');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                icon.classList.remove('text-neon-blue');
+            }
+        }
     </script>
 </body>
 </html>

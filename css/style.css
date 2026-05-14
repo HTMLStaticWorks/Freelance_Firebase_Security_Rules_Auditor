@@ -22,7 +22,12 @@
   --dark-border: rgba(0, 0, 0, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 102, 204, 0.1);
+  --pattern-opacity: 0.03;
   color: #1a1a1a;
+}
+
+:root {
+  --pattern-opacity: 0.05;
 }
 
 /* Light Mode Overrides for Tailwind Classes */
@@ -69,9 +74,13 @@
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.light-mode .text-neon-blue { color: var(--neon-blue) !important; }
-.light-mode .text-neon-emerald { color: var(--neon-emerald) !important; }
-.light-mode .text-neon-purple { color: var(--neon-purple) !important; }
+.light-mode .text-neon-blue, .light-mode .hover\:text-neon-blue:hover, .light-mode .group:hover .group-hover\:text-neon-blue { color: var(--neon-blue) !important; }
+.light-mode .text-neon-emerald, .light-mode .hover\:text-neon-emerald:hover, .light-mode .group:hover .group-hover\:text-neon-emerald { color: var(--neon-emerald) !important; }
+.light-mode .text-neon-purple, .light-mode .hover\:text-neon-purple:hover, .light-mode .group:hover .group-hover\:text-neon-purple { color: var(--neon-purple) !important; }
+
+.light-mode .group:hover .group-hover\:border-neon-blue { border-color: var(--neon-blue) !important; }
+.light-mode .group:hover .group-hover\:border-neon-emerald { border-color: var(--neon-emerald) !important; }
+.light-mode .group:hover .group-hover\:border-neon-purple { border-color: var(--neon-purple) !important; }
 .light-mode .bg-neon-blue\/10 { background-color: rgba(0, 102, 204, 0.1) !important; }
 .light-mode .bg-neon-emerald\/10 { background-color: rgba(0, 153, 51, 0.1) !important; }
 .light-mode .bg-neon-purple\/10 { background-color: rgba(136, 0, 204, 0.1) !important; }
@@ -139,7 +148,35 @@
 
 .light-mode .mix-blend-screen {
   mix-blend-mode: multiply !important;
-  opacity: 0.1 !important;
+  opacity: 0.2 !important;
+}
+
+.light-mode .text-gradient,
+.light-mode .text-gradient-emerald {
+  background: none !important;
+  -webkit-text-fill-color: var(--neon-blue) !important;
+  color: var(--neon-blue) !important;
+}
+
+.light-mode .text-gradient-emerald {
+  -webkit-text-fill-color: var(--neon-emerald) !important;
+  color: var(--neon-emerald) !important;
+}
+
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.light-mode .border-white\/5,
+.light-mode .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light-mode .hover\:bg-white\/5:hover,
+.light-mode .hover\:bg-white\/10:hover,
+.light-mode .hover\:bg-white\/20:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .light-mode .selection\:text-white::selection {
@@ -183,7 +220,13 @@ body {
 .glass-card {
   background: var(--dark-surface);
   border: 1px solid var(--dark-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.light-mode .glass-card {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card:hover {
@@ -381,5 +424,44 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Scroll to Top Button */
+#scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--neon-blue);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
 
+#scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
 
+#scroll-to-top:hover {
+  background-color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 240, 255, 0.5);
+}
+
+.light-mode #scroll-to-top {
+  background-color: var(--neon-blue);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 102, 204, 0.2);
+}
+
+.light-mode #scroll-to-top:hover {
+  background-color: #333;
+}

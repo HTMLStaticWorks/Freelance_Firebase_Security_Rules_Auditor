@@ -6,7 +6,7 @@
     <title>Coming Soon | FireAudit</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
         tailwind.config = {
@@ -18,7 +18,12 @@
                         neon: { blue: '#00f0ff', emerald: '#00ff66', purple: '#b026ff' }
                     }
                 }
-            }
+            },
+            plugins: [
+                function({ addVariant }) {
+                    addVariant('light-mode', '.light-mode &')
+                }
+            ]
         }
     </script>
 </head>
@@ -156,7 +161,7 @@
             </div>
 
             <div class="mt-20 flex justify-center space-x-8 text-gray-500">
-                <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-twitter text-2xl"></i></a>
+                <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
                 <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
                 <a href="#" class="hover:text-neon-emerald transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
             </div>
@@ -176,7 +181,7 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
