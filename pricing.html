@@ -556,6 +556,12 @@
         });
 
         btnRetainer.addEventListener('click', () => {
+            btnRetainer.classList.add('bg-neon-blue', 'text-black');
+            btnRetainer.classList.remove('text-gray-500', 'hover:text-white');
+            
+            btnProject.classList.remove('bg-neon-blue', 'text-black');
+            btnProject.classList.add('text-gray-500', 'hover:text-white');
+
             retainerGrid.classList.remove('hidden');
             projectGrid.classList.add('hidden');
         });
