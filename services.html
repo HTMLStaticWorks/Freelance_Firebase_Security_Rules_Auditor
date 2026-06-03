@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
     
     <!-- Tailwind Config -->
     <script>
@@ -132,16 +132,16 @@
     </nav>
 
     <!-- SECTION 1: Services Hero Banner -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden">
+    <section class="services-hero-dark pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="assets/images/security_philosophy_concept.png" alt="Security Services Background" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0" style="background: linear-gradient(to bottom, var(--dark-bg) 0%, transparent 50%, var(--dark-surface) 100%); opacity: 0.9;"></div>
+            <div class="absolute inset-0 hero-gradient-overlay" style="background: linear-gradient(to bottom, #0a0a0f 0%, transparent 50%, #12121a 100%); opacity: 0.9;"></div>
         </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal active">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white light-mode:text-black">Expert <span class="text-gradient">Security Services</span></h1>
-                <p class="text-lg text-gray-400 light-mode:text-gray-800 max-w-2xl mx-auto mb-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Expert <span class="text-gradient">Security Services</span></h1>
+                <p class="text-lg text-white max-w-2xl mx-auto mb-10">
                     Comprehensive vulnerability assessments, custom rule implementation, and ongoing architecture reviews specifically tailored for the Firebase ecosystem.
                 </p>
                 <a href="#services-grid" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 glass hover:bg-white/5 transition-all text-gray-400 animate-bounce">
@@ -358,7 +358,7 @@
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
                         <i class="fa-solid fa-shield-halved text-neon-blue text-2xl me-2"></i>
-                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-blue">Audit</span></span>
+                        <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
                     </div>
                     <p class="text-gray-500 text-sm mb-6">
                         Professional freelance auditing services for Firebase applications.

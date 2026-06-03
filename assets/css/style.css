@@ -17,13 +17,13 @@
   --neon-cyan: #0088cc;
   --neon-emerald: #009933;
   --neon-purple: #8800cc;
-  --dark-bg: #f8f9fa;
-  --dark-surface: #ffffff;
-  --dark-border: rgba(0, 0, 0, 0.05);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(0, 102, 204, 0.1);
+  --dark-bg: #f1f5f9;       /* Softer gray-blue background */
+  --dark-surface: #ffffff;  /* Card / Container surface */
+  --dark-border: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 102, 204, 0.15);
   --pattern-opacity: 0.03;
-  color: #1a1a1a;
+  color: #1f2937;           /* Softer dark gray text */
 }
 
 :root {
@@ -85,28 +85,27 @@
 .light-mode .bg-neon-emerald\/10 { background-color: rgba(0, 153, 51, 0.1) !important; }
 .light-mode .bg-neon-purple\/10 { background-color: rgba(136, 0, 204, 0.1) !important; }
 
-.light-mode .bg-dark-bg,
-.light-mode .from-dark-bg,
-.light-mode .to-dark-bg { 
+.light-mode .bg-dark-bg { 
   background-color: var(--dark-bg) !important; 
+}
+.light-mode .from-dark-bg { 
   --tw-gradient-from: var(--dark-bg) !important;
-  --tw-gradient-to: var(--dark-bg) !important;
-  --tw-gradient-stops: var(--dark-bg), var(--dark-bg) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(241, 245, 249, 0)) !important;
+}
+.light-mode .to-dark-bg { 
+  --tw-gradient-to: var(--dark-bg) !important; 
 }
 .light-mode .bg-dark-surface { background-color: var(--dark-surface) !important; }
 
 .light-mode .from-dark-bg\/50 {
-  --tw-gradient-from: rgba(248, 249, 250, 0.5) !important;
+  --tw-gradient-from: rgba(241, 245, 249, 0.5) !important;
 }
 
+/* Background classes for custom colors in light mode - using #e2e8f0 (slate-200) for soft depth */
 .light-mode .bg-\[\#0d0d14\],
 .light-mode .bg-\[\#08080c\],
 .light-mode .bg-\[\#0c0c14\],
 .light-mode .bg-\[\#050508\],
-.light-mode .from-\[\#050508\],
-.light-mode .from-\[\#08080c\],
-.light-mode .to-\[\#050508\],
-.light-mode .to-\[\#08080c\],
 .light-mode .bg-\[\#12121a\],
 .light-mode .bg-\[\#0a0a0f\],
 .light-mode .bg-\[\#1a1b26\],
@@ -117,10 +116,18 @@
 .light-mode .bg-gray-900,
 .light-mode .bg-slate-800,
 .light-mode .bg-slate-900 {
-  background-color: #f1f5f9 !important;
-  --tw-gradient-from: #f1f5f9 !important;
-  --tw-gradient-to: #f1f5f9 !important;
-  --tw-gradient-stops: #f1f5f9, #f1f5f9 !important;
+  background-color: #e2e8f0 !important;
+}
+
+/* Gradients for custom colors in light mode */
+.light-mode .from-\[\#050508\],
+.light-mode .from-\[\#08080c\] {
+  --tw-gradient-from: #e2e8f0 !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(226, 232, 240, 0)) !important;
+}
+.light-mode .to-\[\#050508\],
+.light-mode .to-\[\#08080c\] {
+  --tw-gradient-to: #e2e8f0 !important;
 }
 
 .light-mode iframe {
@@ -144,7 +151,9 @@
 .light-mode .text-gray-400 { color: #4b5563 !important; }
 .light-mode .text-gray-300 { color: #374151 !important; }
 .light-mode .text-gray-200 { color: #1a1a1a !important; }
-.light-mode .text-white { color: #000000 !important; }
+.light-mode .text-white,
+.light-mode .hover\:text-white:hover,
+.light-mode .group:hover .group-hover\:text-white { color: #000000 !important; }
 
 .light-mode .mix-blend-screen {
   mix-blend-mode: multiply !important;
@@ -465,3 +474,50 @@ body {
 .light-mode #scroll-to-top:hover {
   background-color: #333;
 }
+
+/* Force dark mode styling for the services hero banner to remove white shade overlay */
+.services-hero-dark {
+  background-color: #0a0a0f !important;
+}
+
+.light-mode .services-hero-dark img[alt="Security Services Background"] {
+  opacity: 0.40 !important; /* Restore normal opacity */
+}
+
+.light-mode .services-hero-dark .hero-gradient-overlay {
+  background: linear-gradient(to bottom, #0a0a0f 0%, transparent 50%, #12121a 100%) !important;
+  opacity: 0.9 !important; /* Ensure dark overlay opacity in light mode */
+}
+
+.light-mode .services-hero-dark .text-white {
+  color: #ffffff !important; /* Prevent text-white from becoming black */
+}
+
+.light-mode .services-hero-dark .text-gray-400 {
+  color: #9ca3af !important; /* Prevent text-gray-400 from becoming dark gray */
+}
+
+.light-mode .services-hero-dark .glass {
+  background: rgba(18, 18, 26, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.light-mode .services-hero-dark .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.light-mode .services-hero-dark a.glass:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Soften all white gradient overlays in light mode to keep background patterns/images visible */
+.light-mode .from-white\/90 { --tw-gradient-from: rgba(226, 232, 240, 0.45) !important; }
+.light-mode .from-white\/80 { --tw-gradient-from: rgba(226, 232, 240, 0.35) !important; }
+.light-mode .from-white\/70 { --tw-gradient-from: rgba(226, 232, 240, 0.3) !important; }
+.light-mode .from-white\/20 { --tw-gradient-from: rgba(226, 232, 240, 0.1) !important; }
+
+.light-mode .via-white\/70 { --tw-gradient-via: rgba(226, 232, 240, 0.25) !important; }
+.light-mode .via-white\/50 { --tw-gradient-via: rgba(226, 232, 240, 0.18) !important; }
+.light-mode .via-white\/30 { --tw-gradient-via: rgba(226, 232, 240, 0.1) !important; }
+
+.light-mode .to-white\/10 { --tw-gradient-to: rgba(226, 232, 240, 0.02) !important; }
