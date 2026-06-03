@@ -132,8 +132,11 @@
     </nav>
 
     <!-- SECTION 1: Niche Hero -->
-    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
-        <div class="absolute inset-0 bg-gradient-to-b dark:from-dark-bg from-white/80 via-dark-bg/95 to-dark-bg"></div>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-dark-bg">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 opacity-40 dark:opacity-30">
+            <img src="assets/images/hero2_bg.png" alt="Cybersecurity Background" class="w-full h-full object-cover hero-bg-img">
+        </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="text-center max-w-4xl mx-auto reveal active">
@@ -503,7 +506,7 @@
                     <p class="text-gray-400">Join the companies that trust FireAudit to keep their user data safe. Let's discuss your specific Firebase architecture.</p>
                 </div>
                 <div class="flex gap-4">
-                    <a href="contact.html" class="bg-white text-black hover:bg-neon-emerald hover:scale-105 transition-all px-8 py-4 rounded-md font-bold">
+                    <a href="contact.html" class="bg-white text-black hover:bg-neon-emerald hover:scale-105 transition-all px-8 py-4 rounded-md font-bold border border-black/15 dark:border-transparent">
                         Start Your Audit <i class="fa-solid fa-arrow-right ms-2"></i>
                     </a>
                 </div>
