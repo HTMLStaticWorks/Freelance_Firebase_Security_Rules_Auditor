@@ -58,7 +58,7 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:block">
-                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:gap-3 xl:gap-8">
                         <div class="relative group">
                             <button class="text-white px-3 py-2 text-sm font-medium flex items-center group">
                                 <span class="nav-link active">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
@@ -74,7 +74,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
+                        <div class="flex items-center lg:gap-2 xl:gap-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -88,7 +88,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center gap-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -106,10 +106,10 @@
         <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
-                    <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                    <button class="w-full text-start text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
                         Home <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
                     </button>
-                    <div class="hidden pl-4 space-y-1">
+                    <div class="hidden ps-4 space-y-1">
                         <a href="index.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 1</a>
                         <a href="index-2.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white bg-white/10">Home 2</a>
                     </div>
@@ -120,7 +120,7 @@
                 <a href="portfolio.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Portfolio</a>
                 <a href="contact.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contact</a>
                 <div class="pt-4 pb-3 border-t border-white/10">
-                    <div class="flex items-center px-5 space-x-3">
+                    <div class="flex items-center px-5 gap-3">
                         <a href="login.html" class="block text-gray-300 hover:text-white font-medium">Login</a>
                         <a href="admin-dashboard.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Dashboard</a>
                     </div>
@@ -135,7 +135,7 @@
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="text-center max-w-4xl mx-auto reveal active">
-                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 glass mb-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 glass mb-8">
                     <span class="relative flex h-3 w-3">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-emerald opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-neon-emerald"></span>
@@ -152,12 +152,12 @@
                     I don't just write rules. I reverse-engineer potential attack vectors against your NoSQL architecture to build impenetrable schemas.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
                     <a href="contact.html" class="bg-neon-emerald text-black hover:bg-white hover:scale-105 transition-all px-8 py-4 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(0,255,102,0.4)] w-full sm:w-auto">
                         Start Security Review
                     </a>
                     <a href="#timeline" class="text-gray-300 hover:text-neon-emerald transition-colors font-semibold flex items-center group">
-                        See Workflow <i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+                        See Workflow <i class="fa-solid fa-arrow-down ms-2 group-hover:translate-y-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
@@ -174,18 +174,18 @@
 
             <div class="relative max-w-4xl mx-auto">
                 <!-- Line -->
-                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2"></div>
+                <div class="absolute start-4 md:start-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2"></div>
 
                 <!-- Step 1 -->
                 <div class="relative flex flex-col md:flex-row items-center mb-16 reveal">
-                    <div class="md:w-1/2 md:pr-12 text-left md:text-right mb-6 md:mb-0 ml-12 md:ml-0">
+                    <div class="md:w-1/2 md:pe-12 text-start md:text-end mb-6 md:mb-0 ms-12 md:ms-0">
                         <h3 class="text-2xl font-bold text-white mb-2">1. Architecture Review</h3>
                         <p class="text-gray-400 text-sm">Analyzing your NoSQL data models and document hierarchy to identify inherent security risks before writing a single rule.</p>
                     </div>
-                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-emerald md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(0,255,102,0.5)] z-10">
+                    <div class="absolute start-0 md:start-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-emerald md:-translate-x-1/2 flex items-center justify-center shadow-[0_0_15px_rgba(0,255,102,0.5)] z-10">
                         <div class="w-3 h-3 rounded-full bg-neon-emerald"></div>
                     </div>
-                    <div class="md:w-1/2 md:pl-12 hidden md:block">
+                    <div class="md:w-1/2 md:ps-12 hidden md:block">
                         <div class="glass p-4 rounded-lg font-code text-xs text-gray-500 border-white/5">
                             schema.json <br>
                             - collections: 12 <br>
@@ -196,16 +196,16 @@
 
                 <!-- Step 2 -->
                 <div class="relative flex flex-col md:flex-row items-center mb-16 reveal">
-                    <div class="md:w-1/2 md:pr-12 hidden md:block">
-                        <div class="glass p-4 rounded-lg font-code text-xs text-gray-500 border-white/5 text-right">
+                    <div class="md:w-1/2 md:pe-12 hidden md:block">
+                        <div class="glass p-4 rounded-lg font-code text-xs text-gray-500 border-white/5 text-end">
                             $ firebase emulators:start <br>
                             [Firestore] Running exploit scripts...
                         </div>
                     </div>
-                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-blue md:-translate-x-1/2 flex items-center justify-center z-10">
+                    <div class="absolute start-0 md:start-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-blue md:-translate-x-1/2 flex items-center justify-center z-10">
                         <div class="w-3 h-3 rounded-full bg-neon-blue"></div>
                     </div>
-                    <div class="md:w-1/2 md:pl-12 ml-12 md:ml-0">
+                    <div class="md:w-1/2 md:ps-12 ms-12 md:ms-0">
                         <h3 class="text-2xl font-bold text-white mb-2">2. Local Simulation</h3>
                         <p class="text-gray-400 text-sm">Deploying your existing rules to the Firebase Emulator Suite and running automated penetration testing scripts to find bypasses.</p>
                     </div>
@@ -213,14 +213,14 @@
 
                 <!-- Step 3 -->
                 <div class="relative flex flex-col md:flex-row items-center reveal">
-                    <div class="md:w-1/2 md:pr-12 text-left md:text-right mb-6 md:mb-0 ml-12 md:ml-0">
+                    <div class="md:w-1/2 md:pe-12 text-start md:text-end mb-6 md:mb-0 ms-12 md:ms-0">
                         <h3 class="text-2xl font-bold text-white mb-2">3. Rule Crafting & Delivery</h3>
                         <p class="text-gray-400 text-sm">Writing granular, robust rules utilizing custom functions for RBAC and data validation, delivered with a comprehensive technical report.</p>
                     </div>
-                    <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-purple md:-translate-x-1/2 flex items-center justify-center z-10">
+                    <div class="absolute start-0 md:start-1/2 w-8 h-8 rounded-full bg-dark-surface border-2 border-neon-purple md:-translate-x-1/2 flex items-center justify-center z-10">
                         <div class="w-3 h-3 rounded-full bg-neon-purple"></div>
                     </div>
-                    <div class="md:w-1/2 md:pl-12 hidden md:block">
+                    <div class="md:w-1/2 md:ps-12 hidden md:block">
                         <div class="glass p-4 rounded-lg font-code text-xs text-neon-emerald border-white/5">
                             deploy_status: "SUCCESS" <br>
                             vulnerabilities: 0
@@ -243,11 +243,11 @@
                 <!-- Example 1 -->
                 <div class="glass-card rounded-xl overflow-hidden reveal border-white/5 hover:border-neon-emerald/30 hover:-translate-y-1 transition-all duration-300">
                     <div class="bg-[#1e1e2e] p-4 flex items-center justify-between border-b border-white/5">
-                        <div class="text-sm font-semibold text-white"><i class="fa-solid fa-money-bill-wave text-neon-emerald mr-2"></i> Financial Transaction Validation</div>
+                        <div class="text-sm font-semibold text-white"><i class="fa-solid fa-money-bill-wave text-neon-emerald me-2"></i> Financial Transaction Validation</div>
                     </div>
                     <div class="p-6 font-code text-sm overflow-x-auto break-all">
                         <div class="text-neon-purple">function</div> <span class="text-neon-blue">isValidTransaction</span>() {
-                        <div class="pl-4">
+                        <div class="ps-4">
                             <span class="text-neon-purple">let</span> data = request.resource.data;<br>
                             <span class="text-gray-500">// Ensure all fields exist and are correct types</span><br>
                             <span class="text-neon-purple">return</span> data.keys().hasAll([<span class="text-yellow-300">'amount'</span>, <span class="text-yellow-300">'currency'</span>]) <br>
@@ -263,18 +263,18 @@
                 <!-- Example 2 -->
                 <div class="glass-card rounded-xl overflow-hidden reveal border-white/5 hover:border-neon-blue/30 hover:-translate-y-1 transition-all duration-300" style="transition-delay: 100ms;">
                     <div class="bg-[#1e1e2e] p-4 flex items-center justify-between border-b border-white/5">
-                        <div class="text-sm font-semibold text-white"><i class="fa-solid fa-users-gear text-neon-blue mr-2"></i> Role-Based Access Control (RBAC)</div>
+                        <div class="text-sm font-semibold text-white"><i class="fa-solid fa-users-gear text-neon-blue me-2"></i> Role-Based Access Control (RBAC)</div>
                     </div>
                     <div class="p-6 font-code text-sm overflow-x-auto break-all">
                         <div class="text-neon-purple">function</div> <span class="text-neon-blue">isAdmin</span>() {
-                        <div class="pl-4">
+                        <div class="ps-4">
                             <span class="text-gray-500">// Fetch user role from a secure collection</span><br>
                             <span class="text-neon-purple">return</span> <span class="text-neon-blue">get</span>(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == <span class="text-yellow-300">'admin'</span>;
                         </div>
                         }
                         <br>
                         <div class="text-neon-blue">match</div> /settings/{docId} {
-                        <div class="pl-4">
+                        <div class="ps-4">
                             <span class="text-neon-blue">allow</span> read: <span class="text-neon-purple">if</span> <span class="text-neon-emerald">true</span>;<br>
                             <span class="text-neon-blue">allow</span> write: <span class="text-neon-purple">if</span> <span class="text-neon-blue">isAdmin</span>();
                         </div>
@@ -292,7 +292,7 @@
                 <!-- Fake Terminal Window -->
                 <div class="bg-[#1a1b26] rounded-xl overflow-hidden border border-white/5">
                     <div class="flex items-center px-4 py-3 bg-[#11111a] border-b border-white/5">
-                        <div class="flex space-x-2">
+                        <div class="flex gap-2">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
@@ -346,11 +346,11 @@
                     
                     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
                         <div class="glass p-6 rounded-xl border-white/5 text-center">
-                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-microchip text-neon-emerald mr-2"></i> Logic Enforcement</h4>
+                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-microchip text-neon-emerald me-2"></i> Logic Enforcement</h4>
                             <p class="text-sm text-gray-500">Rules that understand your business logic, not just database paths.</p>
                         </div>
                         <div class="glass p-6 rounded-xl border-white/5 text-center">
-                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-layer-group text-neon-blue mr-2"></i> Multi-Tenant Safety</h4>
+                            <h4 class="text-white font-bold mb-2 flex items-center justify-center"><i class="fa-solid fa-layer-group text-neon-blue me-2"></i> Multi-Tenant Safety</h4>
                             <p class="text-sm text-gray-500">Total isolation of user data in shared collection architectures.</p>
                         </div>
                     </div>
@@ -374,18 +374,18 @@
                     <p class="text-gray-400 text-sm mb-6 h-10">Best for small apps looking for glaring vulnerabilities.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">$499 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-start">
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Automated Scanning
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Automated Scanning
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Manual Rule Review
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Manual Rule Review
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> PDF Vulnerability Report
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> PDF Vulnerability Report
                         </li>
                         <li class="flex items-start text-sm text-gray-600 line-through">
-                            <i class="fa-solid fa-xmark mt-1 mr-3"></i> Custom Rule Implementation
+                            <i class="fa-solid fa-xmark mt-1 me-3"></i> Custom Rule Implementation
                         </li>
                     </ul>
                     <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white mt-auto">Select Basic</a>
@@ -393,23 +393,23 @@
 
                 <!-- Premium Implementation (Highlighted) -->
                 <div class="glass-card p-8 rounded-2xl reveal border border-neon-emerald/50 relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,255,102,0.1)] flex flex-col h-full text-center hover:md:-translate-y-6 hover:shadow-[0_0_40px_rgba(0,255,102,0.2)] transition-all duration-300">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-neon-emerald text-black text-xs font-bold px-3 py-1 rounded-b-md uppercase tracking-wider">Most Popular</div>
+                    <div class="absolute top-0 start-1/2 -translate-x-1/2 bg-neon-emerald text-black text-xs font-bold px-3 py-1 rounded-b-md uppercase tracking-wider">Most Popular</div>
                     <h3 class="text-xl font-bold text-white mb-2 mt-2">Full Remediation</h3>
                     <p class="text-gray-400 text-sm mb-6 h-10">End-to-end audit, reporting, and writing new rules.</p>
                     <div class="text-3xl font-extrabold text-neon-emerald mb-6">$1,299 <span class="text-sm font-normal text-gray-500">/project</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-start">
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Everything in Basic
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Everything in Basic
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Local Emulator Testing
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Local Emulator Testing
                         </li>
                         <li class="flex items-start text-sm text-white font-semibold">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Complete Rule Rewrite
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Complete Rule Rewrite
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> 30-Day Post-Launch Support
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> 30-Day Post-Launch Support
                         </li>
                     </ul>
                     <a href="contact.html" class="w-full block text-center bg-neon-emerald text-black hover:bg-white transition-all py-3 rounded-md font-bold shadow-[0_0_15px_rgba(0,255,102,0.3)] mt-auto">Get Fully Secured</a>
@@ -421,18 +421,18 @@
                     <p class="text-gray-400 text-sm mb-6 h-10">Ongoing security for actively evolving architectures.</p>
                     <div class="text-3xl font-extrabold text-white mb-6">Custom <span class="text-sm font-normal text-gray-500">/month</span></div>
                     
-                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-left">
+                    <ul class="space-y-4 mb-8 flex-1 max-w-fit mx-auto text-start">
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Architecture Consulting
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Architecture Consulting
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Monthly Audits
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Monthly Audits
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> CI/CD Pipeline Integration
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> CI/CD Pipeline Integration
                         </li>
                         <li class="flex items-start text-sm text-gray-300">
-                            <i class="fa-solid fa-check text-neon-emerald mt-1 mr-3"></i> Priority Slack Support
+                            <i class="fa-solid fa-check text-neon-emerald mt-1 me-3"></i> Priority Slack Support
                         </li>
                     </ul>
                     <a href="contact.html" class="w-full block text-center glass border border-white/10 hover:bg-white/5 transition-colors py-3 rounded-md font-semibold text-white mt-auto">Contact Sales</a>
@@ -468,23 +468,23 @@
                     <div class="absolute -right-8 -bottom-8 opacity-10">
                         <i class="fa-solid fa-server text-9xl text-neon-blue"></i>
                     </div>
-                    <h4 class="text-white font-bold mb-8 flex items-center justify-center text-2xl text-center"><i class="fa-solid fa-check-double text-neon-emerald mr-3"></i> Audit Checklist</h4>
+                    <h4 class="text-white font-bold mb-8 flex items-center justify-center text-2xl text-center"><i class="fa-solid fa-check-double text-neon-emerald me-3"></i> Audit Checklist</h4>
                     <ul class="space-y-6 text-gray-500 max-w-xl mx-auto">
                         <li class="flex items-start">
-                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
-                            <span class="text-left">Complete isolation of PII (Personally Identifiable Information).</span>
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 me-4 text-xs"></i>
+                            <span class="text-start">Complete isolation of PII (Personally Identifiable Information).</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
-                            <span class="text-left">Enforcement of strict type-checking on all write operations.</span>
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 me-4 text-xs"></i>
+                            <span class="text-start">Enforcement of strict type-checking on all write operations.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
-                            <span class="text-left">Prevention of "Collection Group" query leaks.</span>
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 me-4 text-xs"></i>
+                            <span class="text-start">Prevention of "Collection Group" query leaks.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 mr-4 text-xs"></i>
-                            <span class="text-left">Rate-limiting simulation via rule-based request throttling.</span>
+                            <i class="fa-solid fa-shield text-neon-blue mt-1.5 me-4 text-xs"></i>
+                            <span class="text-start">Rate-limiting simulation via rule-based request throttling.</span>
                         </li>
                     </ul>
                 </div>
@@ -496,13 +496,13 @@
     <section class="py-20 bg-dark-surface border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
             <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="mb-8 lg:mb-0 lg:max-w-2xl text-center lg:text-left">
+                <div class="mb-8 lg:mb-0 lg:max-w-2xl text-center lg:text-start">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to lock down your Database?</h2>
                     <p class="text-gray-400">Join the companies that trust FireAudit to keep their user data safe. Let's discuss your specific Firebase architecture.</p>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex gap-4">
                     <a href="contact.html" class="bg-white text-black hover:bg-neon-emerald hover:scale-105 transition-all px-8 py-4 rounded-md font-bold">
-                        Start Your Audit <i class="fa-solid fa-arrow-right ml-2"></i>
+                        Start Your Audit <i class="fa-solid fa-arrow-right ms-2"></i>
                     </a>
                 </div>
             </div>
@@ -515,13 +515,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
-                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
+                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl me-2"></i>
                         <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
                     </div>
                     <p class="text-gray-500 text-sm mb-6">
                         Professional freelance auditing services for Firebase applications.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -562,7 +562,7 @@
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm text-gray-600">
+                <div class="flex gap-6 text-sm text-gray-600">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>

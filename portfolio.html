@@ -52,13 +52,13 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
-                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl me-2 animate-pulse-glow rounded-full"></i>
+                    <i class="fa-solid fa-shield-halved text-neon-blue text-3xl me-2 animate-pulse-glow rounded-full"></i>
                     <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:block">
-                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:gap-x-3 xl:gap-x-8">
                         <div class="relative group">
                             <button class="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
                                 <span class="nav-link">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
@@ -82,7 +82,8 @@
                                 <span class="text-xs font-bold">RTL</span>
                             </button>
                             <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Login</a>
-                            <a href="admin-dashboard.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Dashboard</a>
+                            <a href="admin-dashboard.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Dashboard</a>
+                            <a href="contact.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -106,10 +107,10 @@
         <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
-                    <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                    <button class="w-full text-start text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
                         Home <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
                     </button>
-                    <div class="hidden pl-4 space-y-1">
+                    <div class="hidden ps-4 space-y-1">
                         <a href="index.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 1</a>
                         <a href="index-2.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 2</a>
                     </div>
@@ -120,9 +121,10 @@
                 <a href="portfolio.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white bg-white/10">Portfolio</a>
                 <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 <div class="pt-4 pb-3 border-t border-white/10">
-                    <div class="flex items-center px-5 space-x-3">
+                    <div class="flex items-center px-5 gap-x-3">
                         <a href="login.html" class="block text-gray-300 hover:text-white font-medium">Login</a>
-                        <a href="admin-dashboard.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Dashboard</a>
+                        <a href="admin-dashboard.html" class="block text-gray-300 hover:text-white font-medium">Dashboard</a>
+                        <a href="contact.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -132,7 +134,7 @@
     <!-- Hero Section -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 relative overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
         <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/50 to-dark-bg"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-neon-purple/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-neon-purple/10 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="reveal active">
@@ -160,7 +162,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/vulnerability_scanning_bg.png" alt="FinPay Wallet Security" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-blue/20 border border-neon-blue/30 text-neon-blue text-xs font-bold uppercase">Fintech</span>
                         </div>
                     </div>
@@ -168,9 +170,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">FinPay Wallet Security</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Securing thousands of daily transactions and sensitive user balances using granular field validation and RBAC.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Field-level validation</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Custom transaction functions</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> 0.0% Breach rate</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Field-level validation</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Custom transaction functions</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> 0.0% Breach rate</li>
                         </ul>
                     </div>
                 </div>
@@ -180,7 +182,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/custom_rule_writing_bg.png" alt="HealthSync HIPAA Audit" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-emerald/20 border border-neon-emerald/30 text-neon-emerald text-xs font-bold uppercase">Healthcare</span>
                         </div>
                     </div>
@@ -188,9 +190,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">HealthSync HIPAA Audit</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Redesigning data structures to ensure patient data is never leaked through insecure relationship links or open queries.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> HIPAA-compliant architecture</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Complex auth relationship maps</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Full compliance pass</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> HIPAA-compliant architecture</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Complex auth relationship maps</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Full compliance pass</li>
                         </ul>
                     </div>
                 </div>
@@ -200,7 +202,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/architecture_review_bg.png" alt="Social Networking Security" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-purple/20 border border-neon-purple/30 text-neon-purple text-xs font-bold uppercase">Social Networking</span>
                         </div>
                     </div>
@@ -208,9 +210,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">CollabSpace Protection</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Stopping scraper bots and mass data extraction by implementing sophisticated query limits and list access restrictions.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Scraper mitigation</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Batch write restrictions</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Performance optimized</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Scraper mitigation</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Batch write restrictions</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Performance optimized</li>
                         </ul>
                     </div>
                 </div>
@@ -220,7 +222,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/vulnerability_scanning_bg.png" alt="E-Commerce Security" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-blue/20 border border-neon-blue/30 text-neon-blue text-xs font-bold uppercase">E-Commerce</span>
                         </div>
                     </div>
@@ -228,9 +230,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">Global Marketplace Scale</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Securing a high-volume marketplace with complex pricing logic and vendor-specific data isolation requirements.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Vendor data isolation</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Pricing integrity checks</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> 50k+ daily active users</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Vendor data isolation</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Pricing integrity checks</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> 50k+ daily active users</li>
                         </ul>
                     </div>
                 </div>
@@ -240,7 +242,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/custom_rule_writing_bg.png" alt="EdTech Protection" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-emerald/20 border border-neon-emerald/30 text-neon-emerald text-xs font-bold uppercase">EdTech</span>
                         </div>
                     </div>
@@ -248,9 +250,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">LMS Student Privacy</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Implementing FERPA-aligned security for a major Learning Management System to protect student PII and course materials.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> PII data encryption review</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Course access control</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Multi-org support</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> PII data encryption review</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Course access control</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Multi-org support</li>
                         </ul>
                     </div>
                 </div>
@@ -260,7 +262,7 @@
                     <div class="h-48 relative overflow-hidden">
                         <img src="assets/images/architecture_review_bg.png" alt="Real Estate Vault" class="w-full h-full object-cover opacity-80 dark:opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t dark:from-dark-bg from-white/70 via-white/30 to-transparent opacity-100 dark:opacity-60"></div>
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        <div class="absolute bottom-4 start-1/2 -translate-x-1/2">
                             <span class="px-3 py-1 rounded-full bg-neon-purple/20 border border-neon-purple/30 text-neon-purple text-xs font-bold uppercase">Real Estate</span>
                         </div>
                     </div>
@@ -268,9 +270,9 @@
                         <h3 class="text-xl font-bold text-white mb-3">High-Value Lead Vault</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">Securing sensitive real estate leads and property transaction data with strict owner-only access and read-only history logs.</p>
                         <ul class="space-y-2 mb-8 text-xs text-gray-500 font-code mt-auto inline-flex flex-col items-start mx-auto">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Lead capture security</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Immutability enforcement</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald mr-2"></i> Admin override logs</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Lead capture security</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Immutability enforcement</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-neon-emerald me-2"></i> Admin override logs</li>
                         </ul>
                     </div>
                 </div>
@@ -325,7 +327,7 @@
                     <p class="text-gray-400">I simulate advanced attack vectors to ensure your rules don't just 'work'—they withstand active exploitation.</p>
                 </div>
                 <div class="inline-flex items-center p-1 bg-white/5 border border-white/10 rounded-lg">
-                    <span class="px-4 py-2 text-xs font-bold text-red-400 uppercase tracking-widest"><i class="fa-solid fa-bug mr-2"></i> Vulnerability Analysis</span>
+                    <span class="px-4 py-2 text-xs font-bold text-red-400 uppercase tracking-widest"><i class="fa-solid fa-bug me-2"></i> Vulnerability Analysis</span>
                 </div>
             </div>
 
@@ -333,7 +335,7 @@
                 <!-- Attack 1: Privilege Escalation -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
                     <div>
-                        <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex items-center gap-x-3 mb-6">
                             <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
                                 <i class="fa-solid fa-user-secret text-red-400"></i>
                             </div>
@@ -359,7 +361,7 @@
                         </div>
                         <div class="p-8 font-code text-sm overflow-x-auto break-all">
                             <div class="text-neon-blue">match</div> /users/{userId} { <br>
-                            <div class="pl-6">
+                            <div class="ps-6">
                                 <span class="text-neon-blue">allow</span> update: <span class="text-neon-purple">if</span> request.auth.uid == userId <br>
                                 &nbsp;&nbsp;&& <span class="text-neon-emerald">!request.resource.data.diff(resource.data).affectedKeys().hasAny(['role'])</span>;
                             </div>
@@ -380,7 +382,7 @@
                             </div>
                             <div class="p-8 font-code text-sm overflow-x-auto break-all">
                                 <div class="text-neon-blue">match</div> /products/{prodId} { <br>
-                                <div class="pl-6">
+                                <div class="ps-6">
                                     <span class="text-neon-blue">allow</span> list: <span class="text-neon-purple">if</span> <span class="text-neon-emerald">request.query.limit <= 20</span>;
                                 </div>
                                 }
@@ -388,7 +390,7 @@
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
-                        <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex items-center gap-x-3 mb-6">
                             <div class="w-10 h-10 rounded-full bg-neon-blue/10 flex items-center justify-center">
                                 <i class="fa-solid fa-robot text-neon-blue"></i>
                             </div>
@@ -514,12 +516,12 @@
                 <p class="text-gray-300 mb-10 max-w-2xl mx-auto relative z-10 text-lg">
                     Don't wait for an exploit to find your weak points. Get a professional audit and a custom-crafted ruleset today.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 relative z-10">
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:gap-x-6 relative z-10">
                     <a href="contact.html" class="bg-neon-blue text-black hover:bg-white transition-all px-8 py-4 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(0,240,255,0.4)] w-full sm:w-auto">
                         Get a Free Quote
                     </a>
                     <a href="services.html" class="text-white hover:text-neon-blue transition-colors font-semibold flex items-center">
-                        Explore Services <i class="fa-solid fa-arrow-right ml-2"></i>
+                        Explore Services <i class="fa-solid fa-arrow-right ms-2"></i>
                     </a>
                 </div>
             </div>
@@ -532,13 +534,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
-                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
-                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                        <i class="fa-solid fa-shield-halved text-neon-blue text-2xl me-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-blue">Audit</span></span>
                     </div>
                     <p class="text-gray-500 text-sm mb-6">
                         Professional freelance auditing services for Firebase applications.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex gap-x-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -579,7 +581,7 @@
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm text-gray-600">
+                <div class="flex gap-x-6 text-sm text-gray-600">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>

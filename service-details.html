@@ -52,13 +52,13 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.location.href='index.html'">
-                    <i class="fa-solid fa-shield-halved text-neon-emerald text-3xl me-2 animate-pulse-glow rounded-full"></i>
+                    <i class="fa-solid fa-shield-halved text-neon-blue text-3xl me-2 animate-pulse-glow rounded-full"></i>
                     <span class="font-bold text-xl tracking-tight"><span class="text-white light-mode:text-black">Fire</span><span class="text-neon-emerald">Audit</span></span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:block">
-                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:space-x-3 xl:space-x-8">
+                    <div class="lg:ms-4 xl:ms-10 flex items-baseline lg:gap-x-3 xl:gap-x-8">
                         <div class="relative group">
                             <button class="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium flex items-center group">
                                 <span class="nav-link">Home</span> <i class="fa-solid fa-chevron-down ms-1 text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
@@ -74,7 +74,7 @@
                         <a href="portfolio.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Portfolio</a>
                         <a href="contact.html" class="nav-link text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Contact</a>
                         
-                        <div class="flex items-center lg:space-x-2 xl:space-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
+                        <div class="flex items-center lg:gap-x-2 xl:gap-x-4 border-s border-white/10 lg:ps-2 xl:ps-4">
                             <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <i class="fa-solid fa-sun text-yellow-400"></i>
                             </button>
@@ -82,13 +82,14 @@
                                 <span class="text-xs font-bold">RTL</span>
                             </button>
                             <a href="login.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Login</a>
-                            <a href="admin-dashboard.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Dashboard</a>
+                            <a href="admin-dashboard.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-md hover:bg-white/5">Dashboard</a>
+                            <a href="contact.html" class="bg-neon-blue/10 text-neon-blue border border-neon-blue/30 hover:bg-neon-blue hover:text-black transition-all px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_15px_rgba(0,240,255,0.2)]">Book Now</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center space-x-4">
+                <div class="lg:hidden flex items-center gap-x-4">
                     <button class="theme-toggle w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
                         <i class="fa-solid fa-sun text-yellow-400"></i>
                     </button>
@@ -106,10 +107,10 @@
         <div id="mobile-menu" class="hidden lg:hidden glass border-t border-white/10 absolute w-full animate-fade-in">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="relative">
-                    <button class="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                    <button class="w-full text-start text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
                         Home <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
                     </button>
-                    <div class="hidden pl-4 space-y-1">
+                    <div class="hidden ps-4 space-y-1">
                         <a href="index.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 1</a>
                         <a href="index-2.html" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white">Home 2</a>
                     </div>
@@ -120,9 +121,10 @@
                 <a href="portfolio.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
                 <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 <div class="pt-4 pb-3 border-t border-white/10">
-                    <div class="flex items-center px-5 space-x-3">
+                    <div class="flex items-center px-5 gap-x-3">
                         <a href="login.html" class="block text-gray-300 hover:text-white font-medium">Login</a>
-                        <a href="admin-dashboard.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Dashboard</a>
+                        <a href="admin-dashboard.html" class="block text-gray-300 hover:text-white font-medium">Dashboard</a>
+                        <a href="contact.html" class="block bg-neon-blue text-black px-4 py-2 rounded-md font-bold text-center flex-1">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -134,11 +136,11 @@
         <img src="assets/images/security_audit_bg.png" alt="Firebase Security Audit" class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-20">
         <div class="absolute inset-0 bg-gradient-to-b dark:from-dark-bg from-white/70 via-white/50 to-dark-bg"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <a href="services.html" class="text-gray-500 hover:text-neon-emerald text-sm mb-8 inline-block transition-colors"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Services</a>
+            <a href="services.html" class="text-gray-500 hover:text-neon-emerald text-sm mb-8 inline-block transition-colors"><i class="fa-solid fa-arrow-left me-2"></i> Back to Services</a>
             
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 reveal active">
                 <div class="md:w-2/3">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-neon-emerald/30 bg-neon-emerald/5 text-neon-emerald text-xs font-semibold mb-4">
+                    <div class="inline-flex items-center gap-x-2 px-3 py-1 rounded-full border border-neon-emerald/30 bg-neon-emerald/5 text-neon-emerald text-xs font-semibold mb-4">
                         <i class="fa-solid fa-star"></i> Most Requested
                     </div>
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white light-mode:text-black">Full Remediation & Rewrite</h1>
@@ -153,7 +155,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 reveal border-t border-white/5 pt-16">
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-microscope text-neon-blue mr-2"></i> What I Analyze</h3>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-microscope text-neon-blue me-2"></i> What I Analyze</h3>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li>- Current <code>firestore.rules</code> file</li>
                         <li>- Data model architecture</li>
@@ -163,7 +165,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-laptop-code text-neon-emerald mr-2"></i> What I Deliver</h3>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-laptop-code text-neon-emerald me-2"></i> What I Deliver</h3>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li>- Optimized ruleset file</li>
                         <li>- Exploit proof-of-concepts</li>
@@ -203,12 +205,12 @@
                         <div class="absolute top-2 right-2 text-xs text-red-500 font-bold bg-red-500/10 px-2 py-1 rounded">VULNERABLE</div>
                         <div class="text-gray-500">// Problem: Any authenticated user has full access</div>
                         <div class="text-neon-blue">match</div> /users/{userId} {
-                        <div class="pl-4 text-red-400 line-through">allow read, write: if request.auth != null;</div>
+                        <div class="ps-4 text-red-400 line-through">allow read, write: if request.auth != null;</div>
                         }
                         
                         <div class="text-neon-emerald mt-6">// Solution: Strictly enforce owner access</div>
                         <div class="text-neon-blue">match</div> /users/{userId} {
-                        <div class="pl-4 text-neon-emerald">allow read, write: if request.auth.uid == userId;</div>
+                        <div class="ps-4 text-neon-emerald">allow read, write: if request.auth.uid == userId;</div>
                         }
                     </div>
                 </div>
@@ -219,12 +221,12 @@
                         <div class="absolute top-2 right-2 text-xs text-yellow-500 font-bold bg-yellow-500/10 px-2 py-1 rounded">VULNERABLE</div>
                         <div class="text-gray-500">// Problem: Missing schema validation on write</div>
                         <div class="text-neon-blue">match</div> /products/{productId} {
-                        <div class="pl-4 text-yellow-400">allow write: if isAdmin();</div>
+                        <div class="ps-4 text-yellow-400">allow write: if isAdmin();</div>
                         }
                         
                         <div class="text-neon-emerald mt-6">// Solution: Enforce data types and required fields</div>
                         <div class="text-neon-blue">match</div> /products/{productId} {
-                        <div class="pl-4 text-neon-emerald">allow write: if isAdmin() && <br>
+                        <div class="ps-4 text-neon-emerald">allow write: if isAdmin() && <br>
                             &nbsp;&nbsp;request.resource.data.price is number && <br>
                             &nbsp;&nbsp;request.resource.data.price >= 0;</div>
                         }
@@ -249,7 +251,7 @@
             </div>
 
             <div class="glass-card rounded-2xl overflow-hidden reveal border border-white/10">
-                <table class="w-full text-left text-sm text-gray-400">
+                <table class="w-full text-start text-sm text-gray-400">
                     <thead class="text-xs text-gray-300 uppercase bg-white/5 border-b border-white/10">
                         <tr>
                             <th scope="col" class="px-6 py-4">Features</th>
@@ -302,7 +304,7 @@
             <div class="space-y-4 mb-16">
                 <!-- FAQ -->
                 <div class="glass-card rounded-lg border-white/5 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    <button class="w-full px-6 py-4 text-start font-semibold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
                         What happens if the rules break my frontend logic?
                         <i class="fa-solid fa-chevron-down text-neon-emerald transition-transform duration-300"></i>
                     </button>
@@ -329,13 +331,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1">
                     <div class="flex items-center mb-6">
-                        <i class="fa-solid fa-shield-halved text-neon-emerald text-2xl mr-2"></i>
-                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-emerald">Audit</span></span>
+                        <i class="fa-solid fa-shield-halved text-neon-blue text-2xl me-2"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Fire<span class="text-neon-blue">Audit</span></span>
                     </div>
                     <p class="text-gray-500 text-sm mb-6">
                         Professional freelance auditing services for Firebase applications.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex gap-x-4">
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-neon-blue hover:border-neon-blue transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -376,7 +378,7 @@
             
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-600 text-sm mb-4 md:mb-0">© 2026 FireAudit Services. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm text-gray-600">
+                <div class="flex gap-x-6 text-sm text-gray-600">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
