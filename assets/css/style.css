@@ -526,3 +526,54 @@ body {
 .light-mode .hero-bg-img {
   filter: invert(0.9) brightness(1.15) contrast(1) opacity(0.3) !important;
 }
+
+/* Navigation Bar Spacing Optimizations for iPad Pro and Desktop Views */
+@media (min-width: 1024px) {
+  nav .lg\:gap-x-3,
+  nav .lg\:gap-3 {
+    gap: 0.5rem !important; /* Reduces gap from 12px to 8px on iPad Pro */
+  }
+  nav .lg\:ms-4 {
+    margin-inline-start: 0.5rem !important; /* Reduces start margin from 16px to 8px */
+  }
+  nav .lg\:ps-2 {
+    padding-inline-start: 0.5rem !important; /* Reduces start padding from 8px to 8px */
+  }
+  nav .gap-x-2 {
+    gap: 0.375rem !important; /* Reduces gap from 8px to 6px between toggles/buttons */
+  }
+  nav .nav-link,
+  nav button.px-3 {
+    padding-left: 0.5rem !important; /* Reduces link padding from 12px to 8px */
+    padding-right: 0.5rem !important;
+  }
+  /* For 404 and coming-soon pages that use fixed gap-x-8 and ms-10 without responsive prefixes */
+  nav .gap-x-8 {
+    gap: 1rem !important; /* Reduces fixed desktop gap from 32px to 16px */
+  }
+  nav .ms-10 {
+    margin-inline-start: 1rem !important; /* Reduces fixed margin start from 40px to 16px */
+  }
+}
+
+@media (min-width: 1280px) {
+  nav .xl\:gap-x-8,
+  nav .xl\:gap-8 {
+    gap: 1.25rem !important; /* Reduces gap from 32px to 20px on desktop */
+  }
+  nav .xl\:ms-10 {
+    margin-inline-start: 1.5rem !important; /* Reduces margin start from 40px to 24px */
+  }
+  nav .xl\:gap-x-4,
+  nav .xl\:gap-4 {
+    gap: 0.625rem !important; /* Reduces gap from 16px to 10px */
+  }
+  nav .xl\:ps-4 {
+    padding-inline-start: 1rem !important;
+  }
+  nav .nav-link,
+  nav button.px-3 {
+    padding-left: 0.625rem !important; /* Slight padding buffer on full desktop */
+    padding-right: 0.625rem !important;
+  }
+}
