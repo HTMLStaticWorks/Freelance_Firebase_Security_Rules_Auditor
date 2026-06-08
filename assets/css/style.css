@@ -609,3 +609,10 @@ body {
   color: #6a00a8 !important; /* Extremely high contrast dark purple */
 }
 
+/* RTL Centering Fix for start-1/2 paired with -translate-x-1/2 */
+[dir="rtl"] .start-1\/2.-translate-x-1\/2,
+.rtl .start-1\/2.-translate-x-1\/2 {
+  --tw-translate-x: 50% !important;
+}
+
+
