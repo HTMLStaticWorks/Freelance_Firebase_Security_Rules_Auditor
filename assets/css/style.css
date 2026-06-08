@@ -577,3 +577,35 @@ body {
     padding-right: 0.625rem !important;
   }
 }
+
+/* Light Mode Badges Contrast and Accessibility Fix */
+.light-mode .glass-card .absolute .bg-neon-blue\/20 {
+  background-color: #ffffff !important;
+}
+.light-mode .glass-card .absolute .border-neon-blue\/30 {
+  border-color: rgba(0, 102, 204, 0.45) !important;
+}
+.light-mode .glass-card .absolute .text-neon-blue {
+  color: #004ba0 !important; /* Extremely high contrast dark blue */
+}
+
+.light-mode .glass-card .absolute .bg-neon-emerald\/20 {
+  background-color: #ffffff !important;
+}
+.light-mode .glass-card .absolute .border-neon-emerald\/30 {
+  border-color: rgba(0, 153, 51, 0.45) !important;
+}
+.light-mode .glass-card .absolute .text-neon-emerald {
+  color: #0a4724 !important; /* Extremely high contrast dark green */
+}
+
+.light-mode .glass-card .absolute .bg-neon-purple\/20 {
+  background-color: #ffffff !important;
+}
+.light-mode .glass-card .absolute .border-neon-purple\/30 {
+  border-color: rgba(136, 0, 204, 0.45) !important;
+}
+.light-mode .glass-card .absolute .text-neon-purple {
+  color: #6a00a8 !important; /* Extremely high contrast dark purple */
+}
+
